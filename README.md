@@ -2,6 +2,7 @@
 # Lenguaje de marca
 
 ## Tema 0 - LMSGI_01_Actividades
+
 | Ejercicios | descripción |
 | [Ejercicio 1](Tema 0/Ejercicio1.html) | Html con un encabezado h1 y un pequeño parrafo. |
 | [Ejercicio 2](Tema0/Ejercicio2.xml) | Un documento xml sobre 2 libro de la biblioteca. |
@@ -9,6 +10,7 @@
 | [Ejercicio 4]() | Prueba de Readme del repositorio prueba. |
 
 ## Tema 1 - LMSGI_02_Actividades
+
 | Ejercicios | descripción |
 | --- | --- |
 | [Ejercicio 1](Tema1/Ejercicio1. html) | Crea una página con texto facilitado e incluye etiquetas necesarias. |
