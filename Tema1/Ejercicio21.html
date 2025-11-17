@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Galería de Miniaturas Flotantes</title>
+  <style>
+
+    .thumbnail {
+      float: left;
+      margin: 10px;
+      border: 1px solid #ddd; 
+      border-radius: 4px;     
+      padding: 5px;
+      width: 120px; 
+      box-sizing: border-box;
+      transition: box-shadow 0.3s;
+    }
+
+    .thumbnail img {
+      width: 100%;
+      display: block;
+      border-radius: 4px;
+    }
+
+    .thumbnail:hover {
+      box-shadow: 0 0 5px rgba(0, 140, 186, 0.5);
+    }
+
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .caption {
+      text-align: center;
+      margin-top: 5px;
+      font-size: 0.9em;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Galería de Miniaturas</h2>
+
+<div class="thumbnail">
+  <a href="https://www.w3schools.com/html/pic_trulli.jpg" target="_blank">
+    <img src="https://www.w3schools.com/html/pic_trulli.jpg" alt="Trulli">
+  </a>
+  <div class="caption">Trulli (original)</div>
+</div>
+
+<div class="thumbnail">
+  <a href="https://www.w3schools.com/html/img_girl.jpg" target="_blank">
+    <img src="https://www.w3schools.com/html/img_girl.jpg" alt="Girl in Jacket">
+  </a>
+  <div class="caption">Niña con chaqueta</div>
+</div>
+
+<div class="thumbnail">
+  <a href="https://www.w3schools.com/html/img_chania.jpg" target="_blank">
+    <img src="https://www.w3schools.com/html/img_chania.jpg" alt="Chania">
+  </a>
+  <div class="caption">Chania, Creta</div>
+</div>
+
+<div class="clearfix"></div>
+
+</body>
+</html>
