@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Resultado de la búsqueda</title>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 60%;
+        margin: 20px;
+    }
+    th, td {
+        border: 1px solid #000;
+        padding: 10px;
+        vertical-align: top;
+    }
+    th {
+        background-color: #f2f2f2;
+        text-align: center;
+    }
+    .product-title {
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+    .price-old {
+        text-decoration: line-through;
+        color: #888;
+    }
+    .price-new {
+        font-weight: bold;
+        color: #000;
+    }
+</style>
+</head>
+<body>
+
+<h1>Resultado de la búsqueda</h1>
+
+<table>
+    <tr>
+        <th colspan="2">Resultado de la búsqueda</th>
+    </tr>
+    <tr>
+        <th>Imagen</th>
+        <th>Datos</th>
+    </tr>
+
+    <!-- Product 1 -->
+    <tr>
+        <td><img src="laptop.png" alt="Laptop" width="80"></td>
+        <td>
+            <div class="product-title">Portátil - 3 GHz - 4 GB RAM</div>
+            <div><span class="price-old">3.999 €</span> <span class="price-new">2.599 €</span></div>
+            <a href="#">Comprar</a>
+        </td>
+    </tr>
+
+    <!-- Product 2 -->
+    <tr>
+        <td><img src="camera.png" alt="Videocámara" width="80"></td>
+        <td>
+            <div class="product-title">Videocámara - Alta definición (1080p) - 60 GB</div>
+            <div><span class="price-old">1.099 €</span> <span class="price-new">999 €</span></div>
+            <a href="#">Comprar</a>
+        </td>
+    </tr>
+
+    <!-- Product 3 -->
+    <tr>
+        <td><img src="tv.png" alt="Televisor" width="80"></td>
+        <td>
+            <div class="product-title">Televisor - 46'' - Full HD</div>
+            <div><span class="price-old">2.999 €</span> <span class="price-new">1.799 €</span></div>
+            <a href="#">Comprar</a>
+        </td>
+    </tr>
+
+    <!-- Product 4 -->
+    <tr>
+        <td><img src="phone.png" alt="Móvil" width="80"></td>
+        <td>
+            <div class="product-title">Móvil - 3G - Wi-Fi - 8 GB</div>
+            <div><span class="price-old">399 €</span> <span class="price-new">349 €</span></div>
+            <a href="#">Comprar</a>
+        </td>
+    </tr>
+
+</table>
+
+</body>
+</html>
