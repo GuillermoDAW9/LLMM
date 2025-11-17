@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejemplo de posicionamiento flotante</title>
+
+<style>
+  .img-left {
+    float: left;
+    width: 150px;
+    margin: 10px 15px 10px 0;
+  }
+
+  .img-right {
+    float: right;
+    width: 150px;
+    margin: 10px 0 10px 15px;
+  }
+
+  .clearfix {
+    clear: both;
+    margin-bottom: 30px;
+  }
+
+  p {
+    text-align: justify;
+  }
+</style>
+
+</head>
+<body>
+
+<h2>Imagen flotante a la izquierda</h2>
+
+<img src="https://via.placeholder.com/150" class="img-left" alt="Imagen izquierda">
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tincidunt nisl ut purus iaculis,
+  a pulvinar ipsum mattis. Sed tincidunt, tellus a auctor vulputate, nunc nisl commodo justo, vitae
+  faucibus massa sapien id sapien. Suspendisse potenti. Vivamus luctus erat sed lectus hendrerit,
+  vitae consequat lacus congue.
+</p>
+
+<div class="clearfix"></div>
+
+<h2>Imagen flotante a la derecha</h2>
+
+<img src="https://via.placeholder.com/150" class="img-right" alt="Imagen derecha">
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet justo id eros bibendum
+  varius quis nec ante. Aliquam nec leo vel mauris ultricies efficitur. Nulla facilisi. Pellentesque
+  at lacus non urna posuere condimentum. Cras commodo, enim vitae porttitor porttitor, elit arcu
+  imperdiet neque, sit amet pharetra risus ipsum at erat.
+</p>
+
+<div class="clearfix"></div>
+
+</body>
+</html>
