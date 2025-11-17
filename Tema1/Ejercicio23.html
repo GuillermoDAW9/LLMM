@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú con iFrame</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+  
+    ul.menu {
+      list-style-type: none; 
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    ul.menu li {
+      display: inline; 
+    }
+
+    ul.menu li a {
+      display: inline-block;
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      text-decoration: none;
+    }
+
+    ul.menu li a:hover {
+      background-color: #111;
+    }
+
+
+    iframe {
+      width: 90%;
+      height: 600px;
+      border: 1px solid #000;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Barra de menús con iFrame</h1>
+
+
+<ul class="menu">
+  <li><a href="#" onclick="loadArticle('https://es.wikipedia.org/wiki/HTML')">HTML</a></li>
+  <li><a href="#" onclick="loadArticle('https://es.wikipedia.org/wiki/CSS')">CSS</a></li>
+  <li><a href="#" onclick="loadArticle('https://es.wikipedia.org/wiki/JavaScript')">JavaScript</a></li>
+  <li><a href="#" onclick="loadArticle('https://es.wikipedia.org/wiki/Ajax_(informática)')">Ajax</a></li>
+</ul>
+
+
+<iframe id="wikiFrame" src="https://es.wikipedia.org/wiki/HTML"></iframe>
+
+<script>
+
+  function loadArticle(url) {
+    document.getElementById('wikiFrame').src = url;
+  }
+</script>
+
+</body>
+</html>
