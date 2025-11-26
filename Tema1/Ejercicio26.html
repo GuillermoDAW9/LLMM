@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos de Vídeo HTML5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        video {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        .controls-manual button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .controls-manual button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Reproducción de Vídeo en HTML5</h1>
+        
+        <h2>1. Ejemplo Básico con Controles por Defecto</h2>
+        <p>Este es el ejemplo más sencillo. Al añadir el atributo <code>controls</code>, el navegador muestra automáticamente los botones de reproducción, pausa y volumen.</p>
+
+        
+        <video width="320" height="240" controls>
+          
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            
+            
+            Tu navegador no soporta la etiqueta de vídeo.
+        </video>
+    </div>
+
+    <div class="container">
+        <h2>2. Ejemplo con Botones de Control Manuales (JavaScript)</h2>
+        <p>Este ejemplo demuestra cómo podemos controlar la reproducción de un video mediante botones creados por nosotros, usando JavaScript.</p>
+
+       
+        <video id="miVideo" width="320" height="240">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            Tu navegador no soporta la etiqueta de vídeo.
+        </video>
+
+        <div class="controls-manual">
+          
+            <button onclick="playVideo()">Reproducir</button>
+            
+           
+            <button onclick="pauseVideo()">Pausar</button>
+          
+            <button onclick="setVolumeHigh()">Subir Volumen</button>
+            
+            <button onclick="setVolumeLow()">Bajar Volumen</button>
+        </div>
+    </div>
+
+    <script>
+    
+        var videoElement = document.getElementById("miVideo");
+
+  
+        function playVideo() {
+       
+            videoElement.play();
+        }
+
+        function pauseVideo() {
+          
+            videoElement.pause();
+        }
+        
+     
+        function setVolumeHigh() {
+            
+            videoElement.volume = 1.0; 
+            alert("Volumen al máximo (100%)");
+        }
+
+        function setVolumeLow() {
+       
+            videoElement.volume = 0.2; 
+            alert("Volumen bajo (20%)");
+        }
+        
+       
+    </script>
+
+</body>
+</html>
