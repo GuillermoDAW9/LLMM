@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vídeo de YouTube Incrustado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+       
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /
+            height: 0;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Video de YouTube Incrustado (Embed)</h1>
+        
+        <p>Utilizamos la etiqueta <code>&lt;iframe&gt;</code> para cargar el reproductor de YouTube directamente en nuestra página web.</p>
+        
+
+        <div class="video-wrapper">
+            <iframe 
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        
+        <p>El código incrustado te permite controlar automáticamente la reproducción (autoplay), los controles y más.</p>
+        
+    </div>
+
+</body>
+</html>
