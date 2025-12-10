@@ -1,0 +1,39 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 20px;
+    line-height: 1.6;
+}
+
+.contenedor-principal {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    background-color: #fffaf0; 
+    margin: 30px auto;
+}
+
+.contenido {
+    margin-top: 50px;
+    font-size: 1.1em;
+}
+
+.titulo-adicional {
+   
+    position: absolute; 
+    bottom: 20px; 
+    right: 30px; 
+    
+
+    color: #6a0dad; 
+    font-style: italic;
+    text-align: right;
+    width: 250px;
+    z-index: 5;
+}
+
+.titulo-adicional h2 {
+    font-size: 1.5em;
+    margin: 0;
+}
