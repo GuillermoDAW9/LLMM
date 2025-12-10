@@ -70,5 +70,5 @@
 
 ## Actividad Final - LMSGI_04_Actividades
 
-| [actividad](ActividadFinalHTML/actividad.html) | Set up a Website. |
+| [actividad](ActividadFinalHTML/actividad) | Set up a Website. |
 
