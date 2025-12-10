@@ -1,0 +1,25 @@
+table {
+    width: 700px;
+    border-collapse: collapse;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+}
+
+.titulo th {
+    background-color: black;
+    color: white;
+    font-size: 20px;
+}
+
+.encabezado th {
+    background-color: #666666;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 0.2em;
+}
