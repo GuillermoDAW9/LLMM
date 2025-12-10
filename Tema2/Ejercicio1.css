@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: black;
+}
+
+.cv-box {
+    width: 600px;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+h1 {
+    font-family: Georgia, serif;
+    color: blue;
+    background-color: lightgray;
+    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: 1.6em;
+    word-spacing: 2em;
+    text-align: center;
+    padding: 10px 0;
+}
+
+h2 {
+    font-family: Georgia, serif;
+    color: darkred;
+    font-size: 18px;
+    letter-spacing: 1.4em;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.years {
+    font-weight: bold;
+}
