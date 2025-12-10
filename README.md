@@ -70,5 +70,5 @@
 
 ## Actividad Final - LMSGI_04_Actividades
 
-| [Actividad](Actividad Final/Actividad.html) | Responsive Web Design. |
+| [actividad](ActividadFinalHTML/actividad.html) | Set up a Website. |
 
