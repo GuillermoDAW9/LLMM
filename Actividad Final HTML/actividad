@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Adaptativa Sencilla con Menú Moderno</title>
+    
+    <style>
+        * {
+            box-sizing: border-box; 
+        }
+
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-color: #eee;
+        }
+
+        /* 1. CABECERA */
+        .cabecera {
+            background-color: #1abc9c; 
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .nav {
+            background: linear-gradient(to right, #2c3e50, #34495e); 
+            overflow: hidden;
+            display: flex;
+            justify-content: center; 
+            padding: 5px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+        }
+
+        .nav a {
+            float: left;
+            display: block;
+            color: white;
+            padding: 10px 20px; 
+            text-decoration: none;
+            text-align: center;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s; 
+            font-weight: bold;
+        }
+
+        .nav a:hover {
+            background-color: #1abc9c; 
+            color: #fff;
+            transform: translateY(-2px); 
+        }
+
+        .fila {
+            display: flex; 
+            flex-wrap: wrap; 
+            max-width: 1000px;
+            margin: 10px auto;
+            padding: 5px;
+        }
+
+        .columna {
+            padding: 10px;
+        }
+
+        .columna.lateral {
+            flex: 25%; 
+            background-color: #f9f9f9;
+        }
+
+        .columna.principal {
+            flex: 75%; 
+            background-color: white;
+        }
+
+        .tarjeta {
+            background-color: #fff;
+            padding: 15px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+        }
+        
+        .pie {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .columna.lateral, .columna.principal {
+                flex: 100%; 
+            }
+            
+            /* Navegación vertical */
+            .nav {
+                flex-direction: column; 
+                padding: 0;
+            }
+            .nav a {
+                float: none;
+                width: 100%;
+                margin: 0; 
+                border-radius: 0; 
+                text-align: left;
+                padding-left: 30px; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="cabecera">
+        <h1>Mi Primera Web Adaptativa</h1>
+        <p>Dos columnas que se adaptan a tu móvil.</p>
+    </header>
+
+    <nav class="nav">
+        <a href="#">Inicio</a>
+        <a href="#">Productos</a>
+        <a href="#">Contacto</a>
+    </nav>
+
+    <div class="fila">
+        
+        <aside class="columna lateral">
+            <h2>Menú Lateral</h2>
+            <p>Aquí hay información secundaria.</p>
+            <ul>
+                <li>Enlace A</li>
+                <li>Enlace B</li>
+            </ul>
+        </aside>
+        
+        <main class="columna principal">
+            <h2>Contenido Central</h2>
+            <div class="tarjeta">
+                <h3>Artículo Importante</h3>
+                <p>La barra de navegación ahora tiene un degradado de color azul oscuro, bordes redondeados en los botones y un efecto visual atractivo al pasar el ratón. El diseño sigue siendo totalmente adaptable.</p>
+            </div>
+        </main>
+
+    </div>
+
+    <footer class="pie">
+        <p>Pie de Página (Footer) | Diseño Responsive Básico</p>
+    </footer>
+
+</body>
+</html>
