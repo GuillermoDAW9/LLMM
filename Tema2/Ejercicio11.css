@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.main-content {
+    padding: 20px;
+    margin-top: 60px; /* Espacio para la navbar fija */
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.navbar {
+    overflow: hidden; 
+    background-color: #333;
+    position: fixed; 
+    top: 0;
+    width: 100%;
+    z-index: 1000; 
+}
+
+.navbar a {
+    float: left; 
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.navbar a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+
+
+div.gallery-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+div.gallery {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin: 10px; 
+}
+
+div.gallery:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.responsive {
+    padding: 0 6px; 
+    float: left; 
+    width: 24.99999%; 
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media only screen and (max-width: 900px) {
+    .responsive {
+        width: 49.99999%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .navbar a {
+        float: none; 
+        width: 100%; 
+        text-align: left; 
+    }
+    .main-content {
+        margin-top: 150px; 
+    }
+
+    .responsive {
+        width: 100%; 
+    }
+}
