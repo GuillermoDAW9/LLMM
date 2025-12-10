@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    padding: 0;
+
+
+    background-image: url("imagen.png");
+    background-repeat: repeat-y;
+
+ 
+    background-position: left top;
+
+ 
+    background-attachment: fixed;
+
+    padding-left: 200px; 
+}
+
+.texto {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
