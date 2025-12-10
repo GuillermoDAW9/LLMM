@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Adaptativa (Responsive)</title>
+    <link rel="stylesheet" href="layout.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Mi Proyecto Responsive</h1>
+        <p>Una página diseñada para adaptarse a todos los dispositivos.</p>
+    </header>
+
+    <nav class="navbar">
+        <a href="#">Inicio</a>
+        <a href="#">Servicios</a>
+        <a href="#">Acerca de</a>
+        <a href="#" style="float:right">Contacto</a>
+    </nav>
+
+    <div class="row">
+        
+        <aside class="column sidebar">
+            <h2>Acerca del Proyecto</h2>
+            <p>Este diseño utiliza Flexbox y Media Queries para asegurar la adaptabilidad.</p>
+            <h3>Temas</h3>
+            <ul>
+                <li>HTML5 Semántico</li>
+                <li>CSS3 Flexbox</li>
+                <li>Diseño Responsivo</li>
+                <li>Media Queries</li>
+            </ul>
+        </aside>
+        
+        <main class="column content">
+            <h2>El Contenido Principal</h2>
+            <p>Este es el área más importante de la página. En pantallas grandes (escritorio), ocupa un mayor porcentaje del ancho total y se ubica al lado de la barra lateral.</p>
+            
+            <div class="card">
+                <h3>Primer Artículo</h3>
+                <p>Aquí hay información detallada. En dispositivos móviles, esta columna y la barra lateral se apilarán verticalmente para mejorar la legibilidad y la experiencia del usuario.</p>
+            </div>
+            
+            <div class="card">
+                <h3>Segundo Artículo</h3>
+                <p>La clave del diseño responsive es la etiqueta viewport en HTML y las Media Queries en CSS, que permiten aplicar estilos diferentes según el tamaño de la pantalla.</p>
+            </div>
+        </main>
+
+    </div>
+
+    <footer class="footer">
+        <p>© 2025 Mi Web Adaptativa | Ejercicio CSS</p>
+    </footer>
+
+</body>
+</html>
