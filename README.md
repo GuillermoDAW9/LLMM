@@ -76,7 +76,27 @@
 ## Tema 3 - LMSGI_05_Actividades
 
 | [Ejercicio 1](Tema3/Ejercicio1.html) | Basics. |
+| [Ejercicio 1](Tema3/Ejercicio1.java) | Basics. |
 | [Ejercicio 2](Tema3/Ejercicio2.html) | Showing messages. |
+| [Ejercicio 1](Tema3/Ejercicio1.html) | Showing messages. |
+| [Ejercicio 2](Tema3/Ejercicio2.java) | Showing messages. |
+| [Ejercicio 3](Tema3/Ejercicio3.html) | Images. |
+| [Ejercicio 3](Tema3/Ejercicio3style1.css) | Images. |
+| [Ejercicio 3](Tema3/Ejercicio3style2.css) | Images. |
+| [Ejercicio 4](Tema3/Ejercicio4.html) | Working with variables. |
+| [Ejercicio 5](Tema3/Ejercicio5.html) | Basics. |
+| [Ejercicio 6](Tema3/Ejercicio6.html) | Random Quotes. |
+| [Ejercicio 6](Tema3/Ejercicio6.css) | Random Quotes. |
+| [Ejercicio 6](Tema3/Ejercicio6.js) | Random Quotes. |
+| [Ejercicio 7](Tema3/Ejercicio7.css) | Image Slider. |
+| [Ejercicio 7](Tema3/Ejercicio7.html) | Image Slider. |
+| [Ejercicio 8](Tema3/Ejercicio8.html) | Calculator. |
+| [Ejercicio 8](Tema3/Ejercicio8.js) | Calculator. |
+| [Ejercicio 9](Tema3/Ejercicio9.html) | Convert from Celsius to Fahrenheit. |
+
+
+##Tema 3-DOM - LMSGI_05_Actividades
+
 | [Ejercicio 1](Tema3/Ejercicio1.html) | Basics. |
 | [Ejercicio 1](Tema3/Ejercicio1.html) | Basics. |
 | [Ejercicio 1](Tema3/Ejercicio1.html) | Basics. |
@@ -86,4 +106,8 @@
 | [Ejercicio 1](Tema3/Ejercicio1.html) | Basics. |
 | [Ejercicio 1](Tema3/Ejercicio1.html) | Basics. |
 | [Ejercicio 1](Tema3/Ejercicio1.html) | Basics. |
+| [Ejercicio 1](Tema3/Ejercicio1.html) | Basics. |
+
+
+
 
