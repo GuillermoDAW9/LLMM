@@ -1,0 +1,17 @@
+body {
+  background-color: #e0f7fa;
+  color: #006064;
+  font-family: 'Georgia', serif;
+}
+
+#container {
+  border: 2px solid #006064;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#menu {
+  background-color: #b2ebf2;
+  padding: 10px;
+  font-style: italic;
+}
