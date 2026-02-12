@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Working with Variables</title>
+
+    <script>
+      
+        function showName() {
+            var name;
+            name = document.getElementById("nameInput").value;
+            document.getElementById("resultName").innerHTML = "Your name is: " + name;
+        }
+
+       
+        function showAge() {
+            var age;
+            age = document.getElementById("ageInput").value;
+            document.getElementById("resultAge").innerHTML = "Your age is: " + age;
+        }
+
+       
+        function addNumbers() {
+            var num1, num2, sum;
+
+            num1 = Number(document.getElementById("num1").value);
+            num2 = Number(document.getElementById("num2").value);
+
+            sum = num1 + num2;
+
+            document.getElementById("resultSum").innerHTML = "Sum: " + sum;
+        }
+    </script>
+</head>
+
+<body>
+
+<h2>Working with Variables</h2>
+
+
+<h3>Text Example</h3>
+Enter your name:
+<input type="text" id="nameInput">
+<button onclick="showName()">Show Name</button>
+<p id="resultName"></p>
+
+<hr>
+
+
+<h3>Number Example</h3>
+Enter your age:
+<input type="number" id="ageInput">
+<button onclick="showAge()">Show Age</button>
+<p id="resultAge"></p>
+
+<hr>
+
+
+<h3>Add Two Numbers</h3>
+<input type="number" id="num1">
+<input type="number" id="num2">
+<button onclick="addNumbers()">Add</button>
+<p id="resultSum"></p>
+
+</body>
+</html>
