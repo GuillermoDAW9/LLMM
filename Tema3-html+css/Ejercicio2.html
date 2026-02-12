@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Exercise 2 - Changing styles</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+
+  #displayArea {
+    width: 80%;
+    height: 120px;
+    background-color: #dff0d8;
+    font-size: 48px;
+    font-family: Courier, monospace;
+    color: #33cccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    user-select: none;
+  }
+
+  #controls {
+    background-color: #f08080;
+    padding: 15px;
+    width: 80%;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+  }
+
+  label {
+    color: #333;
+    font-weight: bold;
+  }
+
+  input[type="color"], input[type="range"], select, input[type="text"] {
+    margin-left: 5px;
+    margin-right: 15px;
+    height: 25px;
+    vertical-align: middle;
+  }
+
+  input[type="range"] {
+    width: 150px;
+  }
+</style>
+</head>
+<body>
+
+<div id="displayArea">WebStar</div>
+
+<div id="controls">
+  <label for="colorText">color:</label>
+  <input type="color" id="colorText" value="#33cccc">
+
+  <label for="bgColor">background-color:</label>
+  <input type="color" id="bgColor" value="#dff0d8">
+
+  <label for="fontSize">font-size:</label>
+  <input type="range" id="fontSize" min="10" max="100" value="48">
+
+  <label for="innerHTML">innerHTML:</label>
+  <input type="text" id="innerHTML" value="WebStar" size="12">
+
+  <label for="fontFamily">font:</label>
+  <select id="fontFamily">
+    <option value="Courier" selected>Courier</option>
+    <option value="Arial">Arial</option>
+    <option value="Georgia">Georgia</option>
+    <option value="Times New Roman">Times New Roman</option>
+    <option value="Verdana">Verdana</option>
+  </select>
+</div>
+
+<script>
+  const displayArea = document.getElementById('displayArea');
+  const colorText = document.getElementById('colorText');
+  const bgColor = document.getElementById('bgColor');
+  const fontSize = document.getElementById('fontSize');
+  const innerHTMLInput = document.getElementById('innerHTML');
+  const fontFamily = document.getElementById('fontFamily');
+
+  function actualizarEstilos() {
+    displayArea.style.color = colorText.value;
+    displayArea.style.backgroundColor = bgColor.value;
+    displayArea.style.fontSize = fontSize.value + 'px';
+    displayArea.innerHTML = innerHTMLInput.value;
+    displayArea.style.fontFamily = fontFamily.value;
+  }
+
+ 
+  colorText.addEventListener('input', actualizarEstilos);
+  bgColor.addEventListener('input', actualizarEstilos);
+  fontSize.addEventListener('input', actualizarEstilos);
+  innerHTMLInput.addEventListener('input', actualizarEstilos);
+  fontFamily.addEventListener('change', actualizarEstilos);
+
+
+  actualizarEstilos();
+</script>
+
+</body>
+</html>
