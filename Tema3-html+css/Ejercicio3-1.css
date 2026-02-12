@@ -1,0 +1,15 @@
+body {
+  background-color: #222;
+  color: #ddd;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#container {
+  border: 2px dashed #aaa;
+  padding: 20px;
+}
+
+#menu {
+  background-color: #444;
+  padding: 10px;
+}
