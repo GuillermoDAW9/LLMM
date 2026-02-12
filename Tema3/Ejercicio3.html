@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Images Gallery</title>
+
+
+    <link id="theme" rel="stylesheet" href="style1.css">
+
+    <script>
+        function changeCar() {
+            var car = document.getElementById("cars").value;
+            document.getElementById("carImage").src = car;
+        }
+
+        function changeSpiderman() {
+            var hero = document.getElementById("spiderman").value;
+            document.getElementById("spidermanImage").src = hero;
+        }
+
+        function changeStyle(styleFile) {
+            document.getElementById("theme").href = styleFile;
+        }
+    </script>
+</head>
+
+<body>
+
+<h1>Image Gallery</h1>
+
+
+<button onclick="changeStyle('style1.css')">Style 1</button>
+<button onclick="changeStyle('style2.css')">Style 2</button>
+
+<hr>
+
+
+<div class="section">
+    <h2>Cars</h2>
+
+    <select id="cars" onchange="changeCar()">
+        <option value="coche1.jpg">Car 1</option>
+        <option value="coche2.jpg">Car 2</option>
+        <option value="coche3.jpg">Car 3</option>
+    </select>
+
+    <br><br>
+    <img id="carImage" src="coche1.jpg" height="300">
+</div>
+
+<hr>
+
+
+<div class="section">
+    <h2>Spiderman</h2>
+
+    <select id="spiderman" onchange="changeSpiderman()">
+        <option value="spiderman1.jpg">Spiderman 1</option>
+        <option value="spiderman2.jpg">Spiderman 2</option>
+        <option value="spiderman3.jpg">Spiderman 3</option>
+    </select>
+
+    <br><br>
+    <img id="spidermanImage" src="spiderman1.jpg" height="300">
+</div>
+
+</body>
+</html>
