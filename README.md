@@ -75,6 +75,8 @@
 
 ## Tema 3 - LMSGI_05_Actividades
 
+| Ejercicios | descripción |
+| --- | --- |
 | [Ejercicio 1](Tema3/Ejercicio1.html) | Basics. |
 | [Ejercicio 1](Tema3/Ejercicio1.java) | Basics. |
 | [Ejercicio 2](Tema3/Ejercicio2.html) | Showing messages. |
@@ -93,20 +95,27 @@
 | [Ejercicio 8](Tema3/Ejercicio8.html) | Calculator. |
 | [Ejercicio 8](Tema3/Ejercicio8.js) | Calculator. |
 | [Ejercicio 9](Tema3/Ejercicio9.html) | Convert from Celsius to Fahrenheit. |
+| [Ejercicio 10](Tema3/Ejercicio10.html) | Functions. |
 
 
-##Tema 3-DOM - LMSGI_05_Actividades
+## Tema 3-DOM - LMSGI_05_Actividades
 
+| Ejercicios | descripción |
+| --- | --- |
 | [Ejercicio 1](Tema3/Ejercicio1.html) | Basics. |
-| [Ejercicio 1](Tema3/Ejercicio1.html) | Basics. |
-| [Ejercicio 1](Tema3/Ejercicio1.html) | Basics. |
-| [Ejercicio 1](Tema3/Ejercicio1.html) | Basics. |
-| [Ejercicio 1](Tema3/Ejercicio1.html) | Basics. |
-| [Ejercicio 1](Tema3/Ejercicio1.html) | Basics. |
-| [Ejercicio 1](Tema3/Ejercicio1.html) | Basics. |
-| [Ejercicio 1](Tema3/Ejercicio1.html) | Basics. |
-| [Ejercicio 1](Tema3/Ejercicio1.html) | Basics. |
-| [Ejercicio 1](Tema3/Ejercicio1.html) | Basics. |
+| [Ejercicio 2](Tema3/Ejercicio2.html) | Form. |
+| [Ejercicio 3](Tema3/Ejercicio3.html) | Create elements. |
+| [Ejercicio 4](Tema3/Ejercicio4.html) | Remove elements. |
+| [Ejercicio 5](Tema3/Ejercicio5.log) | HTML document properties. |
+| [Ejercicio 6](Tema3/Ejercicio6.html) | onLoad. |
+| [Ejercicio 7](Tema3/Ejercicio7.html) | onClick. |
+| [Ejercicio 8](Tema3/Ejercicio8.html) | setTiemout. |
+| [Ejercicio 9](Tema3/Ejercicio9.html) | setTiemout y clearTimeout. |
+| [Ejercicio 10](Tema3/Ejercicio10.html) | Game. |
+| [Ejercicio 10](Tema3/Ejercicio10.css) | Game. |
+
+
+## Tema3-
 
 
 
