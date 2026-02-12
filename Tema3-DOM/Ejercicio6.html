@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 6 - onLoad</title>
+    <script>
+        // Función que muestra el mensaje de saludo
+        function saludar() {
+            alert("¡Hola! Bienvenido a la página.");
+            // También se puede mostrar en un div si quieres
+            document.getElementById("mensaje").innerHTML = "¡Hola! Bienvenido a la página.";
+        }
+    </script>
+</head>
+<body onload="saludar()">
+
+<h2>Página con onLoad</h2>
+
+<p id="mensaje" style="font-weight:bold; margin-top:20px;"></p>
+
+<p>Contenido de la página...</p>
+
+</body>
+</html>
