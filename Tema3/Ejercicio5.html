@@ -1,1 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercise 5 - Basics</title>
+
+    <script>
+        
+        function changeFont(fontType) {
+            document.getElementById("myParagraph").style.fontFamily = fontType;
+        }
+
+        
+        function changeImage(imageName) {
+            document.getElementById("myImage").src = imageName;
+        }
+
+        
+        function showMessage(message) {
+            document.getElementById("messageDiv").innerHTML = message;
+        }
+    </script>
+</head>
+
+<body>
+
+<h1>Exercise 5 - Basics</h1>
+
+
+<h2>A. Change Paragraph Style</h2>
+
+<p id="myParagraph">
+    This is a paragraph. Click the buttons to change its font style.
+</p>
+
+<button onclick="changeFont('Arial')">Arial</button>
+<button onclick="changeFont('Courier New')">Courier</button>
+<button onclick="changeFont('Georgia')">Georgia</button>
+
+<hr>
+
+
+<h2>B. Change Image</h2>
+
+<img id="myImage" src="image1.jpg" height="200"><br><br>
+
+<button onclick="changeImage('image1.jpg')">Image 1</button>
+<button onclick="changeImage('image2.jpg')">Image 2</button>
+<button onclick="changeImage('image3.jpg')">Image 3</button>
+
+<hr>
+
+
+<h2>C. Show Messages</h2>
+
+<div id="messageDiv" style="border:1px solid black; padding:10px; width:300px;">
+    Click a button to display a message.
+</div>
+<br>
+
+<button onclick="showMessage('Hello! This is message 1.')">Message 1</button>
+<button onclick="showMessage('Welcome! This is message 2.')">Message 2</button>
+<button onclick="showMessage('Goodbye! This is message 3.')">Message 3</button>
+
+</body>
+</html>
 
