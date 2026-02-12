@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 1 - Básicos</title>
+    <script>
+        function mostrarParrafos() {
+            var parrafos = document.getElementsByTagName("p");
+            var contenido = "";
+
+            for (var i = 0; i < parrafos.length; i++) {
+                contenido += "Párrafo " + (i+1) + ": " + parrafos[i].innerHTML + "<br>";
+            }
+
+         
+            document.getElementById("resultado").innerHTML = contenido;
+        }
+
+        function mostrarPorClase() {
+           
+            var parrafosClase = document.getElementsByClassName("mostrar");
+            var contenido = "";
+
+            for (var i = 0; i < parrafosClase.length; i++) {
+                contenido += "Clase " + (i+1) + ": " + parrafosClase[i].innerHTML + "<br>";
+            }
+
+            document.getElementById("resultado").innerHTML = contenido;
+        }
+    </script>
+</head>
+<body>
+
+<h1>Ejercicio 1 - Básicos</h1>
+
+<p>Este es el primer párrafo.</p>
+<p class="mostrar">Este es el segundo párrafo (clase mostrar).</p>
+<p>Este es el tercer párrafo.</p>
+<p class="mostrar">Este es el cuarto párrafo (clase mostrar).</p>
+
+
+<button onclick="mostrarParrafos()">Mostrar todos los párrafos</button>
+<button onclick="mostrarPorClase()">Mostrar solo párrafos con clase 'mostrar'</button>
+
+
+<div id="resultado" style="margin-top:20px; border:1px solid #ccc; padding:10px;">
+    Aquí se mostrará el contenido de los párrafos
+</div>
+
+</body>
+</html>
