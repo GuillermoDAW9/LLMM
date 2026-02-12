@@ -1,0 +1,24 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+#gameBoard {
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+    gap: 5px;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+    border: 1px solid #444;
+    cursor: pointer;
+}
+
+.cell.off {
+    background-color: black;
+}
