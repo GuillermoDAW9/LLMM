@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 7 - onClick</title>
+    <script>
+        function agregarImagen() {
+            
+            var img = document.createElement("img");
+            
+            
+            img.src = "https://via.placeholder.com/200"; // Puedes cambiar la URL
+            img.alt = "Imagen agregada dinámicamente";
+            img.style.border = "2px solid #000";
+            img.style.marginTop = "10px";
+            
+            
+            var contenedor = document.getElementById("miDiv");
+            
+            
+            contenedor.appendChild(img);
+        }
+    </script>
+</head>
+<body>
+
+<h2>Agregar Imagen con onClick</h2>
+
+<button onclick="agregarImagen()">Agregar Imagen</button>
+
+<div id="miDiv" style="margin-top:20px; border:1px solid #ccc; padding:10px; width:220px; min-height:220px;">
+    Aquí aparecerá la imagen
+</div>
+
+</body>
+</html>
