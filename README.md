@@ -72,3 +72,18 @@
 
 | [actividad](ActividadFinalHTML/actividad.html) | Set up a Website. |
 
+
+## Tema 3 - LMSGI_05_Actividades
+
+| [Ejercicio 1](Tema3/Ejercicio1.html) | Basics. |
+| [Ejercicio 2](Tema3/Ejercicio2.html) | Showing messages. |
+| [Ejercicio 1](Tema3/Ejercicio1.html) | Basics. |
+| [Ejercicio 1](Tema3/Ejercicio1.html) | Basics. |
+| [Ejercicio 1](Tema3/Ejercicio1.html) | Basics. |
+| [Ejercicio 1](Tema3/Ejercicio1.html) | Basics. |
+| [Ejercicio 1](Tema3/Ejercicio1.html) | Basics. |
+| [Ejercicio 1](Tema3/Ejercicio1.html) | Basics. |
+| [Ejercicio 1](Tema3/Ejercicio1.html) | Basics. |
+| [Ejercicio 1](Tema3/Ejercicio1.html) | Basics. |
+| [Ejercicio 1](Tema3/Ejercicio1.html) | Basics. |
+
