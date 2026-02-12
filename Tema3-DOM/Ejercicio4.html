@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 4 - Eliminar elementos</title>
+    <script>
+        function eliminarPrimerElemento() {
+            var lista = document.getElementById("miLista");
+            if (lista.firstChild) {
+                lista.removeChild(lista.firstChild);
+            } else {
+                alert("No hay elementos para eliminar.");
+            }
+        }
+
+        function eliminarUltimoElemento() {
+            var lista = document.getElementById("miLista");
+            if (lista.lastChild) {
+                lista.removeChild(lista.lastChild);
+            } else {
+                alert("No hay elementos para eliminar.");
+            }
+        }
+
+        function eliminarElementoEspecifico() {
+            var lista = document.getElementById("miLista");
+            var indice = parseInt(document.getElementById("indice").value);
+
+            if (isNaN(indice) || indice < 1 || indice > lista.children.length) {
+                alert("Índice inválido.");
+                return;
+            }
+
+            var elemento = lista.children[indice - 1];
+            lista.removeChild(elemento);
+        }
+    </script>
+</head>
+<body>
+
+<h2>Eliminar elementos de una lista</h2>
+
+<ul id="miLista" style="margin-bottom:20px;">
+    <li>Elemento 1</li>
+    <li>Elemento 2</li>
+    <li>Elemento 3</li>
+    <li>Elemento 4</li>
+    <li>Elemento 5</li>
+</ul>
+
+<button onclick="eliminarPrimerElemento()">Eliminar Primer Elemento</button>
+<button onclick="eliminarUltimoElemento()">Eliminar Último Elemento</button>
+<br><br>
+<label for="indice">Eliminar elemento número:</label>
+<input type="number" id="indice" min="1" style="width:50px;">
+<button onclick="eliminarElementoEspecifico()">Eliminar</button>
+
+</body>
+</html>
