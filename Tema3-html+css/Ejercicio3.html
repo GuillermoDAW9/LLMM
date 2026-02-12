@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exercise 3 - Changing the style sheet</title>
+  
+
+  <link id="pagestyle" rel="stylesheet" href="style1.css">
+
+  <script>
+    function cambiarEstilo() {
+      const select = document.getElementById('estilos');
+      const hoja = select.value; // obtiene el valor del option seleccionado
+      document.getElementById('pagestyle').href = hoja;
+    }
+  </script>
+</head>
+<body>
+
+  <div id="container" style="width:500px; margin: auto;">
+
+    <h1>Main Title of Web Page</h1>
+
+    <div id="menu">
+      <b>Menu</b><br>
+      HTML<br>
+      CSS<br>
+      JavaScript
+    </div>
+
+    <div id="content">
+      Content goes here
+    </div>
+
+    <div id="footer">
+      Copyright © W3Schools.com
+    </div>
+
+    <br>
+
+    <label for="estilos"><b>Choose style:</b></label>
+    <select id="estilos" onchange="cambiarEstilo()">
+      <option value="style1.css">Style 1</option>
+      <option value="style2.css">Style 2</option>
+      <option value="style3.css">Style 3</option>
+    </select>
+
+  </div>
+
+</body>
+</html>
