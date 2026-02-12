@@ -1,0 +1,7 @@
+function generarCaptcha() {
+  const imgs = ['captcha1.png', 'captcha2.png', 'captcha3.png', 'captcha4.png'];
+  const idx = Math.floor(Math.random() * imgs.length);
+  captchaTexto = /* el texto correcto para validar */;
+  document.getElementById("captcha").innerHTML = `<img src="${imgs[idx]}" alt="captcha" />`;
+  ...
+}
