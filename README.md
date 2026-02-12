@@ -115,7 +115,21 @@
 | [Ejercicio 10](Tema3/Ejercicio10.css) | Game. |
 
 
-## Tema3-
+## Tema 3-html+css - LMSGI_05_Actividades
+
+| Ejercicios | descripción |
+| --- | --- |
+| [Ejercicio 1](Tema3/Ejercicio1.html) | HTML&CSS editor. |
+| [Ejercicio 2](Tema3/Ejercicio2.html) | Changing styles. |
+| [Ejercicio 3](Tema3/Ejercicio3.html) | Changing the style sheet. |
+| [Ejercicio 3](Tema3/Ejercicio3-1.css) | Changing the style sheet. |
+| [Ejercicio 1](Tema3/Ejercicio3-2.css) | Changing the style sheet. |
+| [Ejercicio 4](Tema3/Ejercicio4.html) | HTML DOM. |
+| [Ejercicio 5](Tema3/Ejercicio5.html) | Memory game. |
+| [Ejercicio 6](Tema3/Ejercicio6.captchas) | Generating Captchas. |
+| [Ejercicio 6](Tema3/Ejercicio6.html) | Generating Captchas. |
+| [Ejercicio 7](Tema3/Ejercicio7.log) | Caesar Cypher+4. |
+
 
 
 
