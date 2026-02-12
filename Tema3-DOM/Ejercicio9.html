@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 9 - setTimeout y clearTimeout</title>
+    <script>
+        var temporizador; 
+
+        function iniciarTemporizador() {
+            
+            temporizador = setTimeout(function() {
+                alert("¡Han pasado 5 segundos! Este es tu mensaje.");
+            }, 5000);
+
+            document.getElementById("estado").innerHTML = "Temporizador iniciado...";
+        }
+
+        function detenerTemporizador() {
+            
+            clearTimeout(temporizador);
+            document.getElementById("estado").innerHTML = "Temporizador detenido.";
+        }
+    </script>
+</head>
+<body>
+
+<h2>setTimeout y clearTimeout</h2>
+
+<p>Haz clic en "Iniciar temporizador" para programar un mensaje en 5 segundos. Puedes detenerlo antes de que aparezca.</p>
+
+<button onclick="iniciarTemporizador()">Iniciar temporizador</button>
+<button onclick="detenerTemporizador()">Detener temporizador</button>
+
+<p id="estado" style="margin-top:20px; font-weight:bold;"></p>
+
+</body>
+</html>
