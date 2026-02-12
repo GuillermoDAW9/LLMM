@@ -1,0 +1,16 @@
+
+console.log("Título de la página:", document.title);
+
+
+var imagenes = document.images; // HTMLCollection de imágenes
+console.log("Imágenes de la página:");
+for (var i = 0; i < imagenes.length; i++) {
+    console.log(i + 1 + ":", imagenes[i].src);
+}
+
+
+var enlaces = document.links; // HTMLCollection de enlaces <a>
+console.log("Enlaces de la página:");
+for (var i = 0; i < enlaces.length; i++) {
+    console.log(i + 1 + ":", enlaces[i].href);
+}
