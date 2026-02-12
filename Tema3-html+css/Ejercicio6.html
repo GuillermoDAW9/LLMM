@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Generador y Evaluador de Captchas</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 30px;
+  }
+  #captcha {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    background-color: #eee;
+    padding: 10px 20px;
+    display: inline-block;
+    user-select: none;
+    margin-bottom: 15px;
+    border-radius: 6px;
+  }
+  input[type="text"] {
+    padding: 8px;
+    font-size: 16px;
+    width: 150px;
+  }
+  button {
+    margin-left: 10px;
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+  #message {
+    margin-top: 15px;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<h2>Captcha Generator and Validator</h2>
+
+<div id="captcha"></div>
+<button onclick="generarCaptcha()">Regenerar Captcha</button>
+
+<br><br>
+
+<input type="text" id="inputCaptcha" placeholder="Escribe el captcha aquí" />
+<button onclick="validarCaptcha()">Validar</button>
+
+<div id="message"></div>
+
+<script>
+  const caracteres = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; // sin letras confusas como I, O, 1, 0
+  let captchaTexto = "";
+
+  function generarCaptcha() {
+    captchaTexto = "";
+    for (let i = 0; i < 6; i++) {
+      captchaTexto += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+    }
+    document.getElementById("captcha").textContent = captchaTexto;
+    document.getElementById("message").textContent = "";
+    document.getElementById("inputCaptcha").value = "";
+  }
+
+  function validarCaptcha() {
+    const input = document.getElementById("inputCaptcha").value.toUpperCase().trim();
+    if (input === captchaTexto) {
+      document.getElementById("message").textContent = "¡Correcto! Captcha validado.";
+      document.getElementById("message").style.color = "green";
+    } else {
+      document.getElementById("message").textContent = "Error: Captcha incorrecto. Inténtalo de nuevo.";
+      document.getElementById("message").style.color = "red";
+    }
+  }
+
+ 
+  window.onload = generarCaptcha;
+</script>
+
+</body>
+</html>
