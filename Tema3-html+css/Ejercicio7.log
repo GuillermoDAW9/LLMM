@@ -1,0 +1,21 @@
+function cesarDescifrar(texto, desplazamiento) {
+  const A = 'A'.charCodeAt(0);
+  const Z = 'Z'.charCodeAt(0);
+
+  return texto.toUpperCase().split('').map(char => {
+    const code = char.charCodeAt(0);
+    if (code >= A && code <= Z) {
+      // Desplazamos hacia atrás
+      let nuevoCode = code - desplazamiento;
+      if (nuevoCode < A) nuevoCode += 26;
+      return String.fromCharCode(nuevoCode);
+    } else {
+      return char; // espacio u otro caracter
+    }
+  }).join('');
+}
+
+const textoCifrado = "PIEOI KVEUY IEOKY QSWHI ZSWSX VSWLE OOEMW MQZIV XMHSX MIPTS IQHIW GMJVE VIWXI PIQWE NIOEG YVMSW MHEHI WYQEH IOEWP ECSVI WZMVX YHIWH IOWIV LYPEQ SCSOI";
+
+const textoDescifrado = cesarDescifrar(textoCifrado, 4);
+console.log(textoDescifrado);
