@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Functions Practice</title>
+
+    <script>
+
+        
+        function max(a, b) {
+            if (a > b) {
+                return a;
+            } else {
+                return b;
+            }
+        }
+
+        function runMax() {
+            var a = parseFloat(document.getElementById("max1").value);
+            var b = parseFloat(document.getElementById("max2").value);
+            document.getElementById("resultMax").innerHTML = "Max: " + max(a, b);
+        }
+
+        
+        function maxOfThree(a, b, c) {
+            return max(max(a, b), c);
+        }
+
+        function runMaxThree() {
+            var a = parseFloat(document.getElementById("m31").value);
+            var b = parseFloat(document.getElementById("m32").value);
+            var c = parseFloat(document.getElementById("m33").value);
+            document.getElementById("resultMaxThree").innerHTML =
+                "Max of three: " + maxOfThree(a, b, c);
+        }
+
+        function isVowel(ch) {
+            ch = ch.toLowerCase();
+            if (ch == "a" || ch == "e" || ch == "i" || ch == "o" || ch == "u") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function runVowel() {
+            var ch = document.getElementById("vowelInput").value;
+            document.getElementById("resultVowel").innerHTML =
+                "Is vowel: " + isVowel(ch);
+        }
+
+        
+        function translate(text) {
+            var result = "";
+            var vowels = "aeiou";
+
+            for (var i = 0; i < text.length; i++) {
+                var ch = text[i];
+                if (vowels.indexOf(ch.toLowerCase()) === -1 && ch.match(/[a-z]/i)) {
+                    result += ch + "o" + ch;
+                } else {
+                    result += ch;
+                }
+            }
+            return result;
+        }
+
+        function runTranslate() {
+            var text = document.getElementById("translateInput").value;
+            document.getElementById("resultTranslate").innerHTML =
+                translate(text);
+        }
+
+      
+        function sum(arr) {
+            var total = 0;
+            for (var i = 0; i < arr.length; i++) {
+                total += arr[i];
+            }
+            return total;
+        }
+
+        function multiply(arr) {
+            var total = 1;
+            for (var i = 0; i < arr.length; i++) {
+                total *= arr[i];
+            }
+            return total;
+        }
+
+        function runArrayOps() {
+            var input = document.getElementById("arrayInput").value;
+            var arr = input.split(",").map(Number);
+
+            document.getElementById("resultArray").innerHTML =
+                "Sum: " + sum(arr) + " | Multiply: " + multiply(arr);
+        }
+
+        
+        function reverse(str) {
+            return str.split("").reverse().join("");
+        }
+
+        function runReverse() {
+            var str = document.getElementById("reverseInput").value;
+            document.getElementById("resultReverse").innerHTML =
+                reverse(str);
+        }
+
+       
+        function runSort() {
+            var words = document.getElementById("sortInput").value.split(",");
+            words.sort();
+            document.getElementById("resultSort").innerHTML =
+                words.join(", ");
+        }
+
+        
+        function findLongestWord(words) {
+            var maxLen = 0;
+            for (var i = 0; i < words.length; i++) {
+                if (words[i].length > maxLen) {
+                    maxLen = words[i].length;
+                }
+            }
+            return maxLen;
+        }
+
+        function runLongest() {
+            var words = document.getElementById("longInput").value.split(",");
+            document.getElementById("resultLongest").innerHTML =
+                "Longest length: " + findLongestWord(words);
+        }
+
+        
+        function filterLongWords(words, i) {
+            var result = [];
+            for (var j = 0; j < words.length; j++) {
+                if (words[j].length > i) {
+                    result.push(words[j]);
+                }
+            }
+            return result;
+        }
+
+        function runFilter() {
+            var words = document.getElementById("filterInput").value.split(",");
+            var length = parseInt(document.getElementById("filterLength").value);
+
+            document.getElementById("resultFilter").innerHTML =
+                filterLongWords(words, length).join(", ");
+        }
+
+        
+        function charFreq(str) {
+            var freq = {};
+            for (var i = 0; i < str.length; i++) {
+                var ch = str[i];
+                if (freq[ch]) {
+                    freq[ch]++;
+                } else {
+                    freq[ch] = 1;
+                }
+            }
+            return JSON.stringify(freq);
+        }
+
+        function runCharFreq() {
+            var str = document.getElementById("charInput").value;
+            document.getElementById("resultCharFreq").innerHTML =
+                charFreq(str);
+        }
+
+    </script>
+</head>
+
+<body>
+
+<h2>JavaScript Functions Practice</h2>
+
+
+<h3>Max of Two</h3>
+<input type="number" id="max1">
+<input type="number" id="max2">
+<button onclick="runMax()">Calculate</button>
+<p id="resultMax"></p>
+
+
+<h3>Max of Three</h3>
+<input type="number" id="m31">
+<input type="number" id="m32">
+<input type="number" id="m33">
+<button onclick="runMaxThree()">Calculate</button>
+<p id="resultMaxThree"></p>
+
+
+<h3>Is Vowel?</h3>
+<input type="text" id="vowelInput" maxlength="1">
+<button onclick="runVowel()">Check</button>
+<p id="resultVowel"></p>
+
+
+<h3>Translate (Rövarspråket)</h3>
+<input type="text" id="translateInput">
+<button onclick="runTranslate()">Translate</button>
+<p id="resultTranslate"></p>
+
+<h3>Sum & Multiply Array (comma separated)</h3>
+<input type="text" id="arrayInput" placeholder="1,2,3,4">
+<button onclick="runArrayOps()">Calculate</button>
+<p id="resultArray"></p>
+
+
+<h3>Reverse String</h3>
+<input type="text" id="reverseInput">
+<button onclick="runReverse()">Reverse</button>
+<p id="resultReverse"></p>
+
+
+<h3>Sort Words</h3>
+<input type="text" id="sortInput" placeholder="banana,apple,pear">
+<button onclick="runSort()">Sort</button>
+<p id="resultSort"></p>
+
+
+<h3>Find Longest Word Length</h3>
+<input type="text" id="longInput">
+<button onclick="runLongest()">Find</button>
+<p id="resultLongest"></p>
+
+
+<h3>Filter Long Words</h3>
+<input type="text" id="filterInput">
+<input type="number" id="filterLength">
+<button onclick="runFilter()">Filter</button>
+<p id="resultFilter"></p>
+
+
+<h3>Character Frequency</h3>
+<input type="text" id="charInput">
+<button onclick="runCharFreq()">Analyze</button>
+<p id="resultCharFreq"></p>
+
+</body>
+</html>
