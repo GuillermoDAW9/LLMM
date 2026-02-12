@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 2 - Formulario</title>
+    <script>
+        function enviarFormulario(event) {
+            event.preventDefault(); // Evita que el formulario se recargue
+
+            
+            var nombre = document.forms["miFormulario"]["nombre"].value;
+            var apellidos = document.forms["miFormulario"]["apellidos"].value;
+
+          
+            document.getElementById("mensaje").innerHTML =
+                "Hola " + nombre + " " + apellidos + ", gracias por completar el formulario.";
+        }
+    </script>
+</head>
+<body>
+
+<h2>Formulario de Ejemplo</h2>
+
+<form name="miFormulario" onsubmit="enviarFormulario(event)">
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" required>
+    <br><br>
+
+    <label for="apellidos">Apellidos:</label>
+    <input type="text" name="apellidos" required>
+    <br><br>
+
+    <input type="submit" value="Enviar">
+</form>
+
+<p id="mensaje" style="margin-top:20px; font-weight:bold;"></p>
+
+</body>
+</html>
