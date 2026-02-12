@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Ejercicio 1. HTML & CSS editor</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  textarea {
+    width: 45%;
+    height: 300px;
+    padding: 10px;
+    font-family: monospace;
+    font-size: 14px;
+    box-sizing: border-box;
+    float: left;
+    background-color: #ffffcc;
+    border: 1px solid #999;
+    resize: none;
+  }
+  #resultado {
+    width: 45%;
+    height: 300px;
+    border: 2px solid #336699;
+    background-color: #ffffcc;
+    padding: 15px;
+    margin-left: 10px;
+    float: left;
+    overflow: auto;
+  }
+  button {
+    display: block;
+    clear: both;
+    margin: 15px 0;
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+</style>
+</head>
+<body>
+
+<h2>Test your HTML code</h2>
+
+<textarea id="codigo">
+<h1>Hello</h1>
+<p>This is a paragraph</p>
+<p>This is the second paragraph</p>
+<p>This is the third paragraph</p>
+<img alt="Sorry!" style="height:150px; width:200px;" src="https://upload.wikimedia.org/wikipedia/commons/1/12/Dice-5.png" />
+</textarea>
+
+<button onclick="mostrarResultado()">Try it</button>
+
+<div id="resultado"></div>
+
+<script>
+  function mostrarResultado() {
+    // Obtener el contenido del textarea
+    var codigo = document.getElementById("codigo").value;
+    // Mostrarlo en el div usando innerHTML
+    document.getElementById("resultado").innerHTML = codigo;
+  }
+
+ 
+  window.onload = mostrarResultado;
+</script>
+
+</body>
+</html>
