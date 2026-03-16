@@ -1,0 +1,9 @@
+1. Los comentarios en XML se escriben así:
+<!-- Esto es un comentario -->
+
+2. ¿Se puede repetir un atributo en el mismo elemento?
+No. Un atributo no puede aparecer más de una vez dentro de la misma etiqueta.
+
+3. ¿Dónde se indica que las etiquetas de apertura y cierre deben coincidir?
+Se indica en la sección 3.1, en la regla "Element Type Match".
+El nombre de la etiqueta de cierre debe ser igual al nombre de la etiqueta de apertura.
