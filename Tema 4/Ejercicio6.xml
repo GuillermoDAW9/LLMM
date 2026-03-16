@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<letter>
+    <sender>
+        <name>Simon North</name>
+        <address>12 Green Street, London</address>
+    </sender>
+    <receiver>
+        <name>Nick Brown</name>
+        <address>45 Oxford Road, Manchester</address>
+    </receiver>
+    <date>2026-03-16</date>
+    <body>
+        Dear Nick,
+        I am writing to confirm that I received your documents.
+        Thank you for sending them.
+    </body>
+    <signature>Simon North</signature>
+</letter>
