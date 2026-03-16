@@ -1,0 +1,36 @@
+```html
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Ejercicio 2 - XML DOM + AJAX</h2>
+<p id="demo"></p>
+
+<script>
+const xhttp = new XMLHttpRequest();
+
+xhttp.onload = function() {
+    const xmlDoc = this.responseXML;
+    const x = xmlDoc.getElementsByTagName("CD");
+    let txt = "";
+
+    for (let i = 0; i < x.length; i++) {
+        let titulo = x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue;
+        let precio = x[i].getElementsByTagName("PRICE")[0].childNodes[0].nodeValue;
+        let compania = x[i].getElementsByTagName("COMPANY")[0].childNodes[0].nodeValue;
+
+        txt += "Título: " + titulo + 
+               " | Precio: " + precio + 
+               " | Compañía: " + compania + "<br>";
+    }
+
+    document.getElementById("demo").innerHTML = txt;
+}
+
+xhttp.open("GET", "cd_catalog.xml");
+xhttp.send();
+</script>
+
+</body>
+</html>
+```
