@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Ejercicio JSON 4</h2>
+<div id="demo"></div>
+
+<script>
+const xmlhttp = new XMLHttpRequest();
+
+xmlhttp.onload = function() {
+    const myObj = JSON.parse(this.responseText);
+    let txt = "";
+
+    // Edad
+    txt += "<h3>Edad</h3>";
+    txt += myObj.age + "<br><br>";
+
+    // Primer elemento pets: tipo
+    txt += "<h3>Primer animal (tipo)</h3>";
+    txt += myObj.pets[0].animal + "<br><br>";
+
+    // Primer elemento pets: nombre
+    txt += "<h3>Primer animal (nombre)</h3>";
+    txt += myObj.pets[0].name + "<br><br>";
+
+    // Número de mascotas
+    txt += "<h3>Número de mascotas</h3>";
+    txt += myObj.pets.length + "<br><br>";
+
+    // Nombre de todas las mascotas
+    txt += "<h3>Nombres de todas las mascotas</h3>";
+    for (let i = 0; i < myObj.pets.length; i++) {
+        txt += myObj.pets[i].name + "<br>";
+    }
+
+    txt += "<br>";
+
+    // Todos los datos en un párrafo
+    txt += "<h3>Todos los datos en un párrafo</h3>";
+    txt += "Nombre: " + myObj.name +
+           ", Edad: " + myObj.age +
+           ", Ciudad: " + myObj.city + "<br><br>";
+
+    // Tabla
+    txt += "<h3>Tabla de mascotas</h3>";
+    txt += "<table border='1'>";
+    txt += "<tr><th>Animal</th><th>Nombre</th></tr>";
+
+    for (let i = 0; i < myObj.pets.length; i++) {
+        txt += "<tr>";
+        txt += "<td>" + myObj.pets[i].animal + "</td>";
+        txt += "<td>" + myObj.pets[i].name + "</td>";
+        txt += "</tr>";
+    }
+
+    txt += "</table>";
+
+    document.getElementById("demo").innerHTML = txt;
+}
+
+xmlhttp.open("GET", "https://www.w3schools.com/js/json_demo.txt");
+xmlhttp.send();
+</script>
+
+</body>
+</html>
+
