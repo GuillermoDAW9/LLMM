@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<CDList>
+    <CD>
+        <title>Thriller</title>
+        <artist>Michael Jackson</artist>
+        <year>1982</year>
+        <category>Pop / R&amp;B / Post-disco</category>
+        <label>Epic Records</label>
+        <tracks>
+            <track>
+                <number>1</number>
+                <name>Wanna Be Startin' Somethin'</name>
+                <duration>6:03</duration>
+            </track>
+            <track>
+                <number>2</number>
+                <name>Baby Be Mine</name>
+                <duration>4:20</duration>
+            </track>
+            <track>
+                <number>3</number>
+                <name>The Girl Is Mine</name>
+                <duration>3:42</duration>
+            </track>
+            <track>
+                <number>4</number>
+                <name>Thriller</name>
+                <duration>5:57</duration>
+            </track>
+            <track>
+                <number>5</number>
+                <name>Beat It</name>
+                <duration>4:18</duration>
+            </track>
+            <track>
+                <number>6</number>
+                <name>Billie Jean</name>
+                <duration>4:54</duration>
+            </track>
+            <track>
+                <number>7</number>
+                <name>Human Nature</name>
+                <duration>4:06</duration>
+            </track>
+            <track>
+                <number>8</number>
+                <name>P.Y.T. (Pretty Young Thing)</name>
+                <duration>3:59</duration>
+            </track>
+            <track>
+                <number>9</number>
+                <name>The Lady in My Life</name>
+                <duration>4:59</duration>
+            </track>
+        </tracks>
+    </CD>
+</CDList>
