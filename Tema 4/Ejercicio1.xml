@@ -1,0 +1,16 @@
+
+<!-- 1. Elemento test element -->
+<test_element>This is our first element!</test_element>
+
+<!-- 2. Jerarquía del elemento book -->
+<book>
+    <chapters></chapters>
+    <author>
+        <name></name>
+        <address></address>
+    </author>
+</book>
+
+<!-- 3. Elemento entry con atributos -->
+<entry no="24" date="27.10.2004"/>
+
