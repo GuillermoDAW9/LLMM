@@ -131,6 +131,44 @@
 | [Ejercicio 7](Tema3/Ejercicio7.log) | Caesar Cypher+4. |
 
 
+## Tema 4 - LMSGI_05_Actividades
 
+| Ejercicios | descripción |
+| --- | --- |
+| [Ejercicio 1](Tema4/Ejercicio1.xml) | Simple questions. |
+| [Ejercicio 2](Tema4/Ejercicio2.xml) | XML tree structures. |
+| [Ejercicio 3](Tema4/Ejercicio3.xml) | XML structure. |
+| [Ejercicio 4](Tema4/Ejercicio4.xml) | Mark up the following email. |
+| [Ejercicio 5](Tema4/Ejercicio5.xml) | XML file, CD information. |
+| [Ejercicio 6](Tema4/Ejercicio6.xml) | XML: a letter template. |
+| [Ejercicio 7](Tema4/Ejercicio7.xml) | Thee XML standard. |
+| [Ejercicio 8](Tema4/Ejercicio8deportistas.xml) | The XML standard. |
+| [Ejercicio 8](Tema4/Ejercicio8geografia.xml) | Additionaal XML exercises. |
+| [Ejercicio 8](Tema4/Ejercicio8mundial.xml) | Additionaal XML exercises. |
+| [Ejercicio 8](Tema4/Ejercicio8peliculas.xml) | Additionaal XML exercises. |
+| [Ejercicio 8](Tema4/Ejercicio8programas.xml) | Additionaal XML exercises. |
+| [Ejercicio 8](Tema4/Ejercicio8texto.xml) | Additionaal XML exercises. |
+| [Ejercicio 8](Tema4/Ejercicio8transporte.xml) | Additionaal XML exercises. |
 
+## Tema 4-DOM - LMSGI_05_Actividades
 
+| Ejercicios | descripción |
+| --- | --- |
+| [Ejercicio 1](Tema4/Ejercicio1.js) | Escribe código necesario para obtener datos. |
+| [Ejercicio 2](Tema4/Ejercicio2.html) | Escribe código necesario para obtener datos. |
+| [Ejercicio 3](Tema4/Ejercicio3.js) | Escribe código necesario para obtener datos. |
+
+## Tema 4-AJAX - LMSGI_05_Actividades
+
+| Ejercicios | descripción |
+| --- | --- |
+| [Ejercicio 1](Tema4/Ejercicio1.html) | Country. |
+| [Ejercicio 2](Tema4/Ejercicio2.html) | Programa meteorología. |
+
+## Tema 4-JSON - LMSGI_05_Actividades
+
+| Ejercicios | descripción |
+| --- | --- |
+| [Ejercicio 1](Tema4/Ejercicio1.html) | Usar archivo y editor. |
+| [Ejercicio 2](Tema4/Ejercicio2.html) | Usar archivo y editor. |
+| [Ejercicio 3](Tema4/Ejercicio3.html) | NASA. |
