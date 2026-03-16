@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Ejercicio JSON</h2>
+
+<p id="longitud"></p>
+<div id="demo"></div>
+
+<script>
+const xmlhttp = new XMLHttpRequest();
+
+xmlhttp.onload = function() {
+    const myObj = JSON.parse(this.responseText);
+
+    // Longitud del array
+    document.getElementById("longitud").innerHTML =
+        "Longitud del array: " + myObj.length;
+
+    // Tabla
+    let txt = "<table border='1'>";
+    txt += "<tr><th>Nombre</th><th>Edad</th></tr>";
+
+    for (let i = 0; i < myObj.length; i++) {
+        txt += "<tr>";
+        txt += "<td>" + myObj[i].name + "</td>";
+        txt += "<td>" + myObj[i].age + "</td>";
+        txt += "</tr>";
+    }
+
+    txt += "</table>";
+
+    document.getElementById("demo").innerHTML = txt;
+}
+
+xmlhttp.open("GET", "https://www.w3schools.com/js/json_demo_array.txt");
+xmlhttp.send();
+</script>
+
+</body>
+</html>
+
