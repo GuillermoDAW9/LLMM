@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Información meteorológica</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .bloque {
+      border: 1px solid #ccc;
+      padding: 12px;
+      margin-bottom: 15px;
+    }
+    h2, h3 {
+      margin-bottom: 8px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #999;
+      padding: 6px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Información meteorológica de Huelva</h2>
+  <div id="demo">Cargando datos...</div>
+
+  <script>
+    const xhttp = new XMLHttpRequest();
+
+    xhttp.onload = function () {
+      const xmlDoc = this.responseXML;
+      let txt = "";
+
+      // Nombre del municipio
+      const nombre = xmlDoc.getElementsByTagName("nombre")[0].childNodes[0].nodeValue;
+
+      // Temperaturas
+      const temperatura = xmlDoc.getElementsByTagName("temperatura")[0];
+      const maxima = temperatura.getElementsByTagName("maxima")[0].childNodes[0].nodeValue;
+      const minima = temperatura.getElementsByTagName("minima")[0].childNodes[0].nodeValue;
+
+      txt += "<div class='bloque'>";
+      txt += "<h3>Municipio</h3>";
+      txt += nombre + "<br>";
+      txt += "<strong>Temperatura máxima:</strong> " + maxima + " ºC<br>";
+      txt += "<strong>Temperatura mínima:</strong> " + minima + " ºC";
+      txt += "</div>";
+
+      // Estado del cielo
+      txt += "<div class='bloque'>";
+      txt += "<h3>Estado del cielo por tramo horario</h3>";
+      txt += "<table>";
+      txt += "<tr><th>Periodo</th><th>Estado del cielo</th></tr>";
+
+      const estados = xmlDoc.getElementsByTagName("estado_cielo");
+      for (let i = 0; i < estados.length; i++) {
+        const periodo = estados[i].getAttribute("periodo");
+        const descripcion = estados[i].getAttribute("descripcion");
+        if (periodo !== null && descripcion !== null && descripcion !== "") {
+          txt += "<tr><td>" + periodo + "</td><td>" + descripcion + "</td></tr>";
+        }
+      }
+
+      txt += "</table>";
+      txt += "</div>";
+
+      // Viento
+      txt += "<div class='bloque'>";
+      txt += "<h3>Dirección y velocidad del viento</h3>";
+      txt += "<table>";
+      txt += "<tr><th>Periodo</th><th>Dirección</th><th>Velocidad (km/h)</th></tr>";
+
+      const vientos = xmlDoc.getElementsByTagName("viento");
+      for (let i = 0; i < vientos.length; i++) {
+        const periodo = vientos[i].getAttribute("periodo");
+
+        const direccionNode = vientos[i].getElementsByTagName("direccion")[0];
+        const velocidadNode = vientos[i].getElementsByTagName("velocidad")[0];
+
+        const direccion = direccionNode && direccionNode.childNodes[0]
+          ? direccionNode.childNodes[0].nodeValue
+          : "";
+
+        const velocidad = velocidadNode && velocidadNode.childNodes[0]
+          ? velocidadNode.childNodes[0].nodeValue
+          : "";
+
+        if (periodo !== null && (direccion !== "" || velocidad !== "")) {
+          txt += "<tr><td>" + periodo + "</td><td>" + direccion + "</td><td>" + velocidad + "</td></tr>";
+        }
+      }
+
+      txt += "</table>";
+      txt += "</div>";
+
+      // Humedad relativa
+      txt += "<div class='bloque'>";
+      txt += "<h3>Humedad relativa</h3>";
+      txt += "<table>";
+      txt += "<tr><th>Máxima</th><th>Mínima</th></tr>";
+
+      const humedad = xmlDoc.getElementsByTagName("humedad_relativa")[0];
+      const humMax = humedad.getElementsByTagName("maxima")[0].childNodes[0].nodeValue;
+      const humMin = humedad.getElementsByTagName("minima")[0].childNodes[0].nodeValue;
+
+      txt += "<tr><td>" + humMax + "%</td><td>" + humMin + "%</td></tr>";
+      txt += "</table>";
+      txt += "</div>";
+
+      document.getElementById("demo").innerHTML = txt;
+    };
+
+    // Huelva capital
+    xhttp.open("GET", "http://www.aemet.es/xml/municipios/localidad_21041.xml");
+    xhttp.send();
+  </script>
+
+</body>
+</html>
