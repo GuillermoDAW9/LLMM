@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AJAX Exercise 1</title>
+  <style>
+    .divTable {
+      display: table;
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    .divTableRow {
+      display: table-row;
+    }
+
+    .divTableHeading {
+      display: table-header-group;
+      font-weight: bold;
+      background-color: #dddddd;
+    }
+
+    .divTableCell,
+    .divTableHead {
+      display: table-cell;
+      border: 1px solid black;
+      padding: 8px;
+    }
+
+    .divTableHead {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>CD Catalog</h2>
+  <button type="button" onclick="loadDoc()">Load CD information</button>
+
+  <div id="demo" class="divTable"></div>
+
+  <script>
+    function loadDoc() {
+      const xhttp = new XMLHttpRequest();
+
+      xhttp.onload = function () {
+        showData(this);
+      };
+
+      xhttp.open("GET", "cd_catalog.xml");
+      xhttp.send();
+    }
+
+    function showData(xml) {
+      const xmlDoc = xml.responseXML;
+      const cds = xmlDoc.getElementsByTagName("CD");
+
+      let result = `
+        <div class="divTableHeading">
+          <div class="divTableRow">
+            <div class="divTableHead">Country</div>
+            <div class="divTableHead">Company</div>
+            <div class="divTableHead">Price</div>
+            <div class="divTableHead">Year</div>
+          </div>
+        </div>
+      `;
+
+      for (let i = 0; i < cds.length; i++) {
+        const country = cds[i].getElementsByTagName("COUNTRY")[0].childNodes[0].nodeValue;
+        const company = cds[i].getElementsByTagName("COMPANY")[0].childNodes[0].nodeValue;
+        const price = cds[i].getElementsByTagName("PRICE")[0].childNodes[0].nodeValue;
+
+        let year = "";
+        if (cds[i].getElementsByTagName("YEAR").length > 0) {
+          year = cds[i].getElementsByTagName("YEAR")[0].childNodes[0].nodeValue;
+        } else if (cds[i].getElementsByTagName("PUBLISHED").length > 0) {
+          year = cds[i].getElementsByTagName("PUBLISHED")[0].childNodes[0].nodeValue;
+        }
+
+        result += `
+          <div class="divTableRow">
+            <div class="divTableCell">${country}</div>
+            <div class="divTableCell">${company}</div>
+            <div class="divTableCell">${price}</div>
+            <div class="divTableCell">${year}</div>
+          </div>
+        `;
+      }
+
+      document.getElementById("demo").innerHTML = result;
+    }
+  </script>
+
+</body>
+</html>
