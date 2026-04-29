@@ -1,51 +1,81 @@
 let xmlDoc;
-let preguntas;
+let preguntas = [];
 let actual = 0;
 let puntos = 0;
-let juegoIniciado = false;
+let cargado = false;
 
 const quiz = document.getElementById("quiz");
+const startBtn = document.getElementById("startBtn");
 
+// 📥 CARGA XML (OBLIGATORIO esperar a que termine)
 const xhttp = new XMLHttpRequest();
-xhttp.onload = function() {
+
+xhttp.onload = function () {
     xmlDoc = this.responseXML;
     preguntas = xmlDoc.getElementsByTagName("question");
+
+    cargado = true;
+
+    console.log("XML cargado correctamente:", preguntas.length, "preguntas");
 };
+
 xhttp.open("GET", "preguntas_futbol.xml");
 xhttp.send();
 
+
+// 🎮 INICIAR JUEGO
 function empezar() {
-    document.getElementById("startBtn").style.display = "none";
+
+    if (!cargado) {
+        alert("Cargando preguntas, espera un segundo...");
+        return;
+    }
+
+    startBtn.style.display = "none";
     quiz.style.display = "block";
+
     actual = 0;
     puntos = 0;
+
     mostrarPregunta();
 }
 
+
+// ❓ MOSTRAR PREGUNTA
 function mostrarPregunta() {
+
     if (actual >= preguntas.length) {
-        quiz.innerHTML = `<h2>🏁 Juego terminado</h2>
-                          <p>Puntuación final: ${puntos}</p>`;
+        quiz.innerHTML = `
+            <h2>🏁 Juego terminado</h2>
+            <p>Puntuación final: ${puntos} / ${preguntas.length}</p>
+        `;
         return;
     }
 
     let q = preguntas[actual];
 
-    let texto = `<h2>Pregunta ${actual + 1}/20</h2>`;
-    texto += `<p>${q.getElementsByTagName("wording")[0].textContent}</p>`;
+    let html = `
+        <h2>Pregunta ${actual + 1} de ${preguntas.length}</h2>
+        <p>${q.getElementsByTagName("wording")[0].textContent}</p>
+    `;
 
     let respuestas = q.getElementsByTagName("choice");
 
     for (let i = 0; i < respuestas.length; i++) {
-        texto += `<button onclick="comprobar(${i})">
-                    ${respuestas[i].textContent}
-                  </button>`;
+        html += `
+            <button onclick="comprobar(${i})">
+                ${respuestas[i].textContent}
+            </button>
+        `;
     }
 
-    quiz.innerHTML = texto;
+    quiz.innerHTML = html;
 }
 
+
+// ✔ COMPROBAR RESPUESTA
 function comprobar(i) {
+
     let respuestas = preguntas[actual].getElementsByTagName("choice");
     let botones = quiz.getElementsByTagName("button");
 
@@ -54,20 +84,14 @@ function comprobar(i) {
     }
 
     if (respuestas[i].getAttribute("correct") === "yes") {
-        botones[i].classList.add("correcto");
-        document.getElementById("resultado").innerText = "✅ Correcto";
+        botones[i].style.background = "green";
         puntos++;
     } else {
-        botones[i].classList.add("incorrecto");
-        document.getElementById("resultado").innerText = "❌ Incorrecto";
+        botones[i].style.background = "red";
     }
 
-    document.getElementById("score").innerText = "Puntos: " + puntos;
-
-    // 🔥 PASA AUTOMÁTICAMENTE A LA SIGUIENTE
     setTimeout(() => {
         actual++;
-        document.getElementById("resultado").innerText = "";
         mostrarPregunta();
-    }, 1000);
+    }, 900);
 }
