@@ -176,4 +176,4 @@
 
 ## ProyectoBootstrap - LMSGI_05_Actividades
 
-| [) | Usar archivo y editor. |
+| [https://guillermodaw9.github.io/LLMM/ProyectoBootstrap/] | Enlace al proyecto |
