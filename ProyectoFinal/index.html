@@ -2,38 +2,20 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Proyecto XML - Quiz</title>
+<title>Kahoot Fútbol</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
+<h1>⚽ Quiz de Fútbol</h1>
 
-    <h1>Quiz XML</h1>
+<div id="quiz"></div>
 
-    <select id="language">
-        <option value="preguntas_es.xml">Español</option>
-        <option value="preguntas_en.xml">English</option>
-    </select>
+<p id="resultado"></p>
+<p id="score">Puntos: 0</p>
 
-    <div class="info">
-        <span id="timer">⏱ 0s</span>
-        <span id="score">⭐ 0</span>
-    </div>
-
-    <div id="card">
-        <h2 id="question"></h2>
-        <div id="answers"></div>
-    </div>
-
-    <div class="controls">
-        <button onclick="nextQuestion()">Siguiente</button>
-    </div>
-
-    <div id="result"></div>
-
-</div>
+<button onclick="siguiente()">Siguiente</button>
 
 <script src="script.js"></script>
 
