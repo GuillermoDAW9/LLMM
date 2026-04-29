@@ -28,3 +28,11 @@ button:nth-child(4) { background: #26890c; }
 .incorrecto {
     background: red !important;
 }
+
+#startBtn {
+    padding: 15px 30px;
+    font-size: 20px;
+    background: #00c853;
+    color: white;
+    border-radius: 10px;
+}
