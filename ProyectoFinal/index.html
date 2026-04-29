@@ -2,25 +2,38 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Quiz XML</title>
+<title>Proyecto XML - Quiz</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>Quiz XML</h1>
+<div class="container">
 
-<select id="language">
-  <option value="preguntas_es.xml">Español</option>
-  <option value="preguntas_en.xml">English</option>
-</select>
+    <h1>Quiz XML</h1>
 
-<p id="timer">Tiempo: 0s</p>
-<p id="score">Puntuación: 0</p>
+    <select id="language">
+        <option value="preguntas_es.xml">Español</option>
+        <option value="preguntas_en.xml">English</option>
+    </select>
 
-<div id="quiz"></div>
+    <div class="info">
+        <span id="timer">⏱ 0s</span>
+        <span id="score">⭐ 0</span>
+    </div>
 
-<button onclick="nextQuestion()">Siguiente</button>
+    <div id="card">
+        <h2 id="question"></h2>
+        <div id="answers"></div>
+    </div>
+
+    <div class="controls">
+        <button onclick="nextQuestion()">Siguiente</button>
+    </div>
+
+    <div id="result"></div>
+
+</div>
 
 <script src="script.js"></script>
 
