@@ -1,33 +1,31 @@
-let xmlDoc;
 let preguntas = [];
 let actual = 0;
 let puntos = 0;
-let cargado = false;
 
 const quiz = document.getElementById("quiz");
 const startBtn = document.getElementById("startBtn");
 
-// 📥 CARGA XML (OBLIGATORIO esperar a que termine)
-const xhttp = new XMLHttpRequest();
+// 📥 CARGA SEGURA DEL XML
+async function cargarXML() {
+    const response = await fetch("preguntas_futbol.xml");
+    const text = await response.text();
 
-xhttp.onload = function () {
-    xmlDoc = this.responseXML;
-    preguntas = xmlDoc.getElementsByTagName("question");
+    const parser = new DOMParser();
+    const xml = parser.parseFromString(text, "text/xml");
 
-    cargado = true;
+    preguntas = xml.getElementsByTagName("question");
 
-    console.log("XML cargado correctamente:", preguntas.length, "preguntas");
-};
+    console.log("✔ Preguntas cargadas:", preguntas.length);
+}
 
-xhttp.open("GET", "preguntas_futbol.xml");
-xhttp.send();
+cargarXML();
 
 
-// 🎮 INICIAR JUEGO
+// 🎮 INICIAR
 function empezar() {
 
-    if (!cargado) {
-        alert("Cargando preguntas, espera un segundo...");
+    if (preguntas.length < 1) {
+        alert("Aún no se han cargado las preguntas. Espera 1 segundo.");
         return;
     }
 
@@ -46,8 +44,8 @@ function mostrarPregunta() {
 
     if (actual >= preguntas.length) {
         quiz.innerHTML = `
-            <h2>🏁 Juego terminado</h2>
-            <p>Puntuación final: ${puntos} / ${preguntas.length}</p>
+            <h2>🏁 Fin del juego</h2>
+            <p>Puntuación: ${puntos} / ${preguntas.length}</p>
         `;
         return;
     }
@@ -55,7 +53,7 @@ function mostrarPregunta() {
     let q = preguntas[actual];
 
     let html = `
-        <h2>Pregunta ${actual + 1} de ${preguntas.length}</h2>
+        <h2>Pregunta ${actual + 1} / ${preguntas.length}</h2>
         <p>${q.getElementsByTagName("wording")[0].textContent}</p>
     `;
 
@@ -73,7 +71,7 @@ function mostrarPregunta() {
 }
 
 
-// ✔ COMPROBAR RESPUESTA
+// ✔ COMPROBAR
 function comprobar(i) {
 
     let respuestas = preguntas[actual].getElementsByTagName("choice");
@@ -93,5 +91,5 @@ function comprobar(i) {
     setTimeout(() => {
         actual++;
         mostrarPregunta();
-    }, 900);
+    }, 800);
 }
