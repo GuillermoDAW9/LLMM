@@ -1,11 +1,11 @@
-let xmlDoc;
-let questions;
+let xmlDoc, questions;
 let current = 0;
 let score = 0;
 let time = 0;
 let timer;
 
-const quizDiv = document.getElementById("quiz");
+const questionEl = document.getElementById("question");
+const answersEl = document.getElementById("answers");
 
 document.getElementById("language").addEventListener("change", loadXML);
 
@@ -16,53 +16,68 @@ function loadXML() {
     xhttp.onload = function () {
         xmlDoc = this.responseXML;
         questions = xmlDoc.getElementsByTagName("question");
+
         current = 0;
         score = 0;
         time = 0;
 
         clearInterval(timer);
-        timer = setInterval(updateTimer, 1000);
+        timer = setInterval(() => {
+            time++;
+            document.getElementById("timer").innerText = "⏱ " + time + "s";
+        }, 1000);
 
         showQuestion();
     };
+
     xhttp.open("GET", file);
     xhttp.send();
 }
 
-function updateTimer() {
-    time++;
-    document.getElementById("timer").innerText = "Tiempo: " + time + "s";
-}
-
 function showQuestion() {
     let q = questions[current];
+    questionEl.textContent = q.getElementsByTagName("wording")[0].textContent;
 
-    let text = "<h2>" + q.getElementsByTagName("wording")[0].textContent + "</h2>";
+    answersEl.innerHTML = "";
 
     let choices = q.getElementsByTagName("choice");
 
     for (let i = 0; i < choices.length; i++) {
-        text += `<button onclick="checkAnswer(${i})">${choices[i].textContent}</button><br>`;
-    }
+        let btn = document.createElement("button");
+        btn.textContent = choices[i].textContent;
 
-    quizDiv.innerHTML = text;
+        btn.onclick = () => checkAnswer(btn, choices[i]);
+
+        answersEl.appendChild(btn);
+    }
 }
 
-function checkAnswer(i) {
-    let choices = questions[current].getElementsByTagName("choice");
+function checkAnswer(button, choice) {
+    let allButtons = answersEl.getElementsByTagName("button");
 
-    if (choices[i].getAttribute("correct") === "yes") {
-        score++;
+    for (let btn of allButtons) {
+        btn.disabled = true;
     }
 
-    document.getElementById("score").innerText = "Puntuación: " + score;
+    if (choice.getAttribute("correct") === "yes") {
+        button.classList.add("correct");
+        score++;
+    } else {
+        button.classList.add("wrong");
+    }
+
+    document.getElementById("score").innerText = "⭐ " + score;
 }
 
 function nextQuestion() {
     current++;
 
     if (current >= questions.length) {
-        quizDiv.innerHTML = "<h2>Test finalizado</h2>";
+        document.getElementById("card").innerHTML =
+            `<h2>Test finalizado</h2>
+             <p>Puntuación: ${score}</p>
+             <p>Tiempo: ${time}s</p>`;
+
         clearInterval(timer);
         return;
     }
@@ -70,5 +85,5 @@ function nextQuestion() {
     showQuestion();
 }
 
-// Carga inicial
+// carga inicial
 loadXML();
