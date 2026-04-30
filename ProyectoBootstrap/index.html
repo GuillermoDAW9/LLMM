@@ -3,104 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coches de Lujo - Proyecto Bootstrap</title>
+    <title>Mis Videojuegos - Proyecto Bootstrap</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .carousel-item img { height: 500px; object-fit: cover; }
-        .card-img-top { height: 200px; object-fit: cover; }
-        .navbar-brand { font-weight: bold; }
+        body { background-color: #f8f9fa; }
+        /* Ajuste para que las imágenes del carrusel no se deformen */
+        .carousel-item img {
+            height: 500px;
+            object-fit: cover;
+        }
+        .card-img-top {
+            height: 250px;
+            object-fit: cover;
+        }
+        section { padding: 60px 0; }
+        .navbar-brand { font-weight: bold; color: #ffc107 !important; }
     </style>
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">🏎️ MOTOR WORLD</a>
+            <a class="navbar-brand" href="#">🎮 GAMER ZONE</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#marcas">Marcas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#juegos">Juegos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#media">Multimedia</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div id="inicio" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=1200" class="d-block w-100" alt="BMW">
+                <img src="1.jpg" class="d-block w-100" alt="FIFA">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Ingeniería Alemana</h5>
-                    <p>BMW: El placer de conducir en su máxima expresión.</p>
+                    <h2>FIFA</h2>
+                    <p>El simulador de fútbol definitivo.</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=1200" class="d-block w-100" alt="Mercedes">
+                <img src="2.jpg" class="d-block w-100" alt="Call of Duty">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Elegancia Pura</h5>
-                    <p>Mercedes-Benz: Lo mejor o nada.</p>
+                    <h2>Call of Duty</h2>
+                    <p>Acción y disparos en primera persona.</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200" class="d-block w-100" alt="Porsche">
+                <img src="3.jpg" class="d-block w-100" alt="Minecraft">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Deportividad Extrema</h5>
-                    <p>Siente la potencia en cada curva.</p>
+                    <h2>Minecraft</h2>
+                    <p>Construye tu propio mundo infinito.</p>
                 </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#inicio" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#inicio" data-bs-slide="next">
             <span class="carousel-control-next-icon"></span>
         </button>
     </div>
 
-    <div class="container my-5" id="marcas">
-        <h2 class="text-center mb-4">Nuestras Marcas Destacadas</h2>
-        <div class="row">
+    <section id="juegos" class="container">
+        <h2 class="text-center mb-5">Mis Títulos Favoritos</h2>
+        <div class="row text-center">
             <div class="col-md-4 mb-4">
                 <div class="card shadow">
-                    <img src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?q=80&w=500" class="card-img-top" alt="BMW M4">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">BMW M Series</h5>
-                        <p class="card-text">Potencia y control unidos en un diseño agresivo y aerodinámico.</p>
-                        <a href="#" class="btn btn-primary">Ver Modelos</a>
+                    <img src="1.jpg" class="card-img-top" alt="FIFA">
+                    <div class="card-body">
+                        <h5 class="card-title">FIFA</h5>
+                        <p class="card-text">Domina el campo de juego con los mejores equipos del mundo.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
                 <div class="card shadow">
-                    <img src="https://images.unsplash.com/photo-1617469767053-d8229a9f1b3a?q=80&w=500" class="card-img-top" alt="Mercedes AMG">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Mercedes AMG</h5>
-                        <p class="card-text">Lujo interior con el rugido de un motor de competición.</p>
-                        <a href="#" class="btn btn-dark">Explorar</a>
+                    <img src="2.jpg" class="card-img-top" alt="COD">
+                    <div class="card-body">
+                        <h5 class="card-title">Call of Duty</h5>
+                        <p class="card-text">Completa misiones épicas y compite en el modo online.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
                 <div class="card shadow">
-                    <img src="https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?q=80&w=500" class="card-img-top" alt="Audi RS">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Audi RS</h5>
-                        <p class="card-text">Tecnología de vanguardia y tracción total Quattro.</p>
-                        <a href="#" class="btn btn-danger">Saber más</a>
+                    <img src="3.jpg" class="card-img-top" alt="Minecraft">
+                    <div class="card-body">
+                        <h5 class="card-title">Minecraft</h5>
+                        <p class="card-text">Supervivencia y creatividad sin límites en bloques.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section id="media" class="bg-light">
+        <div class="container text-center">
+            <h2 class="mb-5">Contenido Multimedia</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4">
+                    <h4>Trailer Destacado</h4>
+                    <div class="ratio ratio-16x9 shadow-sm rounded overflow-hidden">
+                        <video controls>
+                            <source src="video.mp4" type="video/mp4">
+                            Tu navegador no soporta vídeos.
+                        </video>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h4>Banda Sonora</h4>
+                    <div class="p-4 bg-white shadow-sm rounded">
+                        <p>Escucha el tema principal:</p>
+                        <audio controls class="w-100">
+                            <source src="audio.mp3" type="audio/mpeg">
+                            Tu navegador no soporta audio.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer class="bg-dark text-white text-center py-4">
-        <div class="container">
-            <p>&copy; 2026 Motor World - Guillermo DAW. Proyecto realizado con Bootstrap.</p>
-        </div>
+        <p>&copy; 2026 Guillermo DAW - Proyecto Videojuegos Bootstrap</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
