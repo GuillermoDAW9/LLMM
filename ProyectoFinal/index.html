@@ -2,32 +2,42 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fútbol Quiz - Kahoot</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Fútbol Quiz 20</title>
+    <style>
+        /* ESTO HARÁ QUE SOLO SE VEA UNA PANTALLA A LA VEZ */
+        body { font-family: sans-serif; background: #46178f; color: white; text-align: center; padding: 20px; }
+        .contenedor { background: white; color: #333; padding: 20px; border-radius: 15px; max-width: 500px; margin: auto; }
+        .oculto { display: none !important; } /* Esta es la línea más importante */
+        .grid-respuestas { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+        button { padding: 15px; cursor: pointer; border-radius: 8px; border: none; font-weight: bold; }
+        .btn-jugar { background: #26890c; color: white; font-size: 1.2rem; }
+        .btn-opcion { background: #1368ce; color: white; }
+        .btn-opcion:hover { background: #0b4a96; }
+        .info { display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 15px; color: #666; }
+    </style>
 </head>
 <body>
-    <div id="contenedor-principal">
-        <div id="inicio">
+
+    <div class="contenedor">
+        <div id="pantalla-inicio">
             <h1>🏆 FÚTBOL QUIZ 🏆</h1>
             <p>¿Podrás acertar las 20 preguntas?</p>
-            <button id="boton-jugar" onclick="comenzar()">¡JUGAR!</button>
+            <button class="btn-jugar" onclick="comenzarJuego()">¡JUGAR!</button>
         </div>
 
-        <div id="juego" class="oculto">
-            <div class="info-superior">
-                <div id="numero-pregunta">Pregunta: 1 / 20</div>
-                <div id="marcador">Puntos: 0</div>
+        <div id="pantalla-juego" class="oculto">
+            <div class="info">
+                <span id="num-pregunta">Pregunta 1/20</span>
+                <span id="puntos">Puntos: 0</span>
             </div>
-            <div id="pregunta">Aquí va la pregunta</div>
-            <div id="opciones">
-                </div>
+            <h2 id="texto-pregunta">¿Pregunta?</h2>
+            <div id="contenedor-opciones" class="grid-respuestas"></div>
         </div>
 
-        <div id="final" class="oculto">
-            <h2>¡Juego Terminado!</h2>
-            <div id="puntuacion-final">Has acertado 0 de 20</div>
-            <button onclick="location.reload()">Reintentar</button>
+        <div id="pantalla-final" class="oculto">
+            <h2>¡Fin del Juego!</h2>
+            <p id="txt-final"></p>
+            <button class="btn-jugar" onclick="location.reload()">REINTENTAR</button>
         </div>
     </div>
 
