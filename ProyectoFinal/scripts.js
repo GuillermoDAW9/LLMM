@@ -1,3 +1,4 @@
+// 1. Array de preguntas (Asegúrate de que este bloque esté arriba)
 const preguntas = [
     { q: "¿Qué selección ha ganado más Mundiales?", opt: ["Brasil", "Alemania", "Italia", "Argentina"], ans: 0 },
     { q: "¿Quién es el máximo goleador histórico de la Champions?", opt: ["Messi", "Lewandowski", "Cristiano Ronaldo", "Benzema"], ans: 2 },
@@ -24,32 +25,45 @@ const preguntas = [
 let indicePreguntaActual = 0;
 let puntos = 0;
 
+// FUNCIÓN PRINCIPAL PARA ARRANCAR
 function jugar() {
-    document.getElementById('pantalla-inicio').style.display = 'none';
-    document.getElementById('pantalla-final').style.display = 'none';
-    document.getElementById('pantalla-juego').style.display = 'block';
+    console.log("El juego ha comenzado"); // Esto es para que veas en la consola (F12) que funciona
+    
+    // Mostramos y ocultamos secciones
+    const inicio = document.getElementById('pantalla-inicio');
+    const juego = document.getElementById('pantalla-juego');
+    const final = document.getElementById('pantalla-final');
+
+    if(inicio) inicio.style.display = 'none';
+    if(final) final.style.display = 'none';
+    if(juego) juego.style.display = 'block';
+
     indicePreguntaActual = 0;
     puntos = 0;
     mostrarPregunta();
 }
 
 function mostrarPregunta() {
+    const contenedorTexto = document.getElementById('pregunta-texto');
+    const contenedorOpciones = document.getElementById('opciones-contenedor');
+    const contador = document.getElementById('contador');
+
     if (indicePreguntaActual < preguntas.length) {
         const p = preguntas[indicePreguntaActual];
-        document.getElementById('pregunta-texto').innerText = p.q;
-        document.getElementById('contador').innerText = `Pregunta ${indicePreguntaActual + 1} de ${preguntas.length}`;
-        document.getElementById('puntos-actuales').innerText = `Puntos: ${puntos}`;
         
-        const contenedor = document.getElementById('opciones-contenedor');
-        contenedor.innerHTML = ""; 
-
-        p.opt.forEach((opcion, i) => {
-            const boton = document.createElement('button');
-            boton.innerText = opcion;
-            boton.classList.add('btn-respuesta');
-            boton.onclick = () => comprobarRespuesta(i);
-            contenedor.appendChild(boton);
-        });
+        if(contenedorTexto) contenedorTexto.innerText = p.q;
+        if(contador) contador.innerText = `Pregunta ${indicePreguntaActual + 1} de ${preguntas.length}`;
+        
+        if(contenedorOpciones) {
+            contenedorOpciones.innerHTML = ""; 
+            p.opt.forEach((opcion, i) => {
+                const boton = document.createElement('button');
+                boton.innerText = opcion;
+                boton.className = 'btn-respuesta'; // Asegúrate de tener esta clase en CSS
+                boton.onclick = () => comprobarRespuesta(i);
+                contenedorOpciones.appendChild(boton);
+            });
+        }
     } else {
         finalizarJuego();
     }
@@ -64,7 +78,11 @@ function comprobarRespuesta(i) {
 }
 
 function finalizarJuego() {
-    document.getElementById('pantalla-juego').style.display = 'none';
-    document.getElementById('pantalla-final').style.display = 'block';
-    document.getElementById('resultado-texto').innerText = `Has conseguido ${puntos} puntos de ${preguntas.length} posibles.`;
+    const pantallaJuego = document.getElementById('pantalla-juego');
+    const pantallaFinal = document.getElementById('pantalla-final');
+    const resultadoTexto = document.getElementById('resultado-texto');
+
+    if(pantallaJuego) pantallaJuego.style.display = 'none';
+    if(pantallaFinal) pantallaFinal.style.display = 'block';
+    if(resultadoTexto) resultadoTexto.innerText = `Resultado final: ${puntos} de ${preguntas.length}`;
 }
