@@ -3,31 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fútbol Quiz - Proyecto Final</title>
+    <title>Fútbol Quiz - Kahoot</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <div class="container">
-        <div id="pantalla-inicio">
-            <h1>🏆 Fútbol Quiz 🏆</h1>
-            <p>Demuestra que eres el que más sabe de fútbol. ¡20 preguntas te esperan!</p>
-            <button class="btn-principal" onclick="comenzarJuego()">¡JUGAR AHORA!</button>
+    <div id="contenedor-principal">
+        <div id="inicio">
+            <h1>🏆 FÚTBOL QUIZ 🏆</h1>
+            <p>¿Podrás acertar las 20 preguntas?</p>
+            <button id="boton-jugar" onclick="comenzar()">¡JUGAR!</button>
         </div>
 
-        <div id="pantalla-juego" style="display: none;">
-            <div class="stats">
-                <span id="contador">Pregunta 1 de 20</span>
+        <div id="juego" class="oculto">
+            <div class="info-superior">
+                <div id="numero-pregunta">Pregunta: 1 / 20</div>
+                <div id="marcador">Puntos: 0</div>
             </div>
-            <h2 id="pregunta-texto">Cargando pregunta...</h2>
-            <div id="opciones-contenedor" class="grid-opciones">
+            <div id="pregunta">Aquí va la pregunta</div>
+            <div id="opciones">
                 </div>
         </div>
 
-        <div id="pantalla-final" style="display: none;">
+        <div id="final" class="oculto">
             <h2>¡Juego Terminado!</h2>
-            <p id="resultado-texto"></p>
-            <button class="btn-principal" onclick="location.reload()">Volver a intentar</button>
+            <div id="puntuacion-final">Has acertado 0 de 20</div>
+            <button onclick="location.reload()">Reintentar</button>
         </div>
     </div>
 
