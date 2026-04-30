@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Kahoot Fútbol</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futbol Quiz - Proyecto Final</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<h1>⚽ Quiz de Fútbol</h1>
+    <div class="container">
+        <div id="pantalla-inicio">
+            <h1>🏆 Fútbol Quiz 🏆</h1>
+            <p>Demuestra que eres el que más sabe de fútbol. ¡20 preguntas te esperan!</p>
+            <button class="btn-principal" onclick="jugar()">¡JUGAR AHORA!</button>
+        </div>
 
-<button id="startBtn" onclick="empezar()">Jugar</button>
+        <div id="pantalla-juego" style="display: none;">
+            <div class="header-juego">
+                <span id="contador">Pregunta 1 de 20</span>
+                <span id="puntos-actuales">Puntos: 0</span>
+            </div>
+            <h2 id="pregunta-texto">¿Pregunta?</h2>
+            <div id="opciones-contenedor" class="grid-opciones">
+                </div>
+        </div>
 
-<div id="quiz" style="display:none;"></div>
+        <div id="pantalla-final" style="display: none;">
+            <h2>¡Fin del juego!</h2>
+            <p id="resultado-texto"></p>
+            <button class="btn-principal" onclick="location.reload()">Reintentar</button>
+        </div>
+    </div>
 
-<p id="resultado"></p>
-<p id="score">Puntos: 0</p>
-
-<script src="script.js"></script>
-  
-<button id="startBtn" onclick="empezar()">Jugar</button>
-
-<div id="quiz" style="display:none;"></div>
+    <script src="script.js"></script>
 </body>
 </html>
