@@ -2,45 +2,111 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Fútbol Quiz 20</title>
+    <title>Fútbol Quiz Final</title>
     <style>
-        /* ESTO HARÁ QUE SOLO SE VEA UNA PANTALLA A LA VEZ */
-        body { font-family: sans-serif; background: #46178f; color: white; text-align: center; padding: 20px; }
-        .contenedor { background: white; color: #333; padding: 20px; border-radius: 15px; max-width: 500px; margin: auto; }
-        .oculto { display: none !important; } /* Esta es la línea más importante */
+        body { font-family: 'Arial', sans-serif; background-color: #46178f; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .card { background: white; color: #333; padding: 30px; border-radius: 20px; width: 90%; max-width: 500px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .oculto { display: none !important; }
+        .btn-inicio, .btn-opcion { border: none; border-radius: 10px; cursor: pointer; font-weight: bold; transition: 0.2s; }
+        .btn-inicio { background: #26890c; color: white; padding: 15px 40px; font-size: 1.2rem; }
         .grid-respuestas { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
-        button { padding: 15px; cursor: pointer; border-radius: 8px; border: none; font-weight: bold; }
-        .btn-jugar { background: #26890c; color: white; font-size: 1.2rem; }
-        .btn-opcion { background: #1368ce; color: white; }
-        .btn-opcion:hover { background: #0b4a96; }
-        .info { display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 15px; color: #666; }
+        .btn-opcion { background: #1368ce; color: white; padding: 20px; font-size: 1rem; }
+        .btn-opcion:hover { transform: scale(1.02); background: #0b4a96; }
+        .header { display: flex; justify-content: space-between; margin-bottom: 20px; color: #777; font-size: 0.9rem; }
+        h2 { margin: 20px 0; font-size: 1.5rem; }
     </style>
 </head>
 <body>
 
-    <div class="contenedor">
-        <div id="pantalla-inicio">
-            <h1>🏆 FÚTBOL QUIZ 🏆</h1>
-            <p>¿Podrás acertar las 20 preguntas?</p>
-            <button class="btn-jugar" onclick="comenzarJuego()">¡JUGAR!</button>
+    <div class="card">
+        <div id="inicio">
+            <h1>⚽ FÚTBOL QUIZ ⚽</h1>
+            <p>Demuestra tu nivel con estas 20 preguntas</p>
+            <br>
+            <button class="btn-inicio" onclick="comenzar()">¡JUGAR!</button>
         </div>
 
-        <div id="pantalla-juego" class="oculto">
-            <div class="info">
-                <span id="num-pregunta">Pregunta 1/20</span>
+        <div id="juego" class="oculto">
+            <div class="header">
+                <span id="progreso">Pregunta 1/20</span>
                 <span id="puntos">Puntos: 0</span>
             </div>
-            <h2 id="texto-pregunta">¿Pregunta?</h2>
-            <div id="contenedor-opciones" class="grid-respuestas"></div>
+            <h2 id="enunciado">Cargando...</h2>
+            <div id="opciones-caja" class="grid-respuestas"></div>
         </div>
 
-        <div id="pantalla-final" class="oculto">
-            <h2>¡Fin del Juego!</h2>
-            <p id="txt-final"></p>
-            <button class="btn-jugar" onclick="location.reload()">REINTENTAR</button>
+        <div id="final" class="oculto">
+            <h2>🏆 ¡RESULTADO!</h2>
+            <p id="puntuacion-final" style="font-size: 1.5rem; font-weight: bold;"></p>
+            <button class="btn-inicio" onclick="location.reload()">REINTENTAR</button>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // LAS 20 PREGUNTAS DEFINIDAS AQUÍ MISMO
+        const banco = [
+            { q: "¿Qué selección tiene más Mundiales?", a: ["Brasil", "Italia", "Alemania", "Argentina"], c: 0 },
+            { q: "¿Quién tiene más Balones de Oro?", a: ["Cristiano", "Messi", "Zidane", "Pele"], c: 1 },
+            { q: "¿Dónde fue el primer Mundial (1930)?", a: ["Brasil", "Francia", "Uruguay", "Italia"], c: 2 },
+            { q: "¿Equipo con más Champions?", a: ["Liverpool", "Real Madrid", "Milan", "Bayern"], c: 1 },
+            { q: "¿Quién ganó el Mundial 2022?", a: ["Francia", "Argentina", "España", "Marruecos"], c: 1 },
+            { q: "¿Apodo de la selección chilena?", a: ["La Roja", "La Tri", "La Sele", "La Albiceleste"], c: 0 },
+            { q: "¿Dónde se retiró Zidane?", a: ["Juventus", "PSG", "Real Madrid", "Cannes"], c: 2 },
+            { q: "¿Campeón Eurocopa 2024?", a: ["Inglaterra", "España", "Francia", "Holanda"], c: 1 },
+            { q: "¿Quién es 'O Rei'?", a: ["Maradona", "Pelé", "Messi", "Cruyff"], c: 1 },
+            { q: "¿Dónde juega el Barça en 2024?", a: ["Camp Nou", "Montjuïc", "Cornellà", "Metropolitano"], c: 1 },
+            { q: "¿Marcó el gol de España en 2010?", a: ["Iniesta", "Villa", "Xavi", "Torres"], c: 0 },
+            { q: "¿Quién es 'La Oranje'?", a: ["Bélgica", "Holanda", "Alemania", "Austria"], c: 1 },
+            { q: "¿Jugador con más partidos mundiales?", a: ["Messi", "Klose", "Matthäus", "CR7"], c: 0 },
+            { q: "¿Ciudad del estadio Anfield?", a: ["Londres", "Manchester", "Liverpool", "Leeds"], c: 2 },
+            { q: "¿Club con más Premier League?", a: ["Arsenal", "Chelsea", "Man. United", "City"], c: 2 },
+            { q: "¿Entrenador sextete Barça?", a: ["Guardiola", "Luis Enrique", "Vilanova", "Rijkaard"], c: 0 },
+            { q: "¿Quién es la 'Araña Negra'?", a: ["Casillas", "Yashin", "Buffon", "Neuer"], c: 1 },
+            { q: "¿Cuántos Balones de Oro tiene CR7?", a: ["4", "5", "6", "3"], c: 1 },
+            { q: "¿Año primer Mundial Argentina?", a: ["1978", "1986", "1930", "2022"], c: 0 },
+            { q: "¿Sede final Mundial 2026?", a: ["México", "Canadá", "EE.UU.", "Brasil"], c: 2 }
+        ];
+
+        let index = 0;
+        let score = 0;
+
+        function comenzar() {
+            document.getElementById('inicio').classList.add('oculto');
+            document.getElementById('juego').classList.remove('oculto');
+            cargarPregunta();
+        }
+
+        function cargarPregunta() {
+            if (index < banco.length) {
+                const data = banco[index];
+                document.getElementById('enunciado').innerText = data.q;
+                document.getElementById('progreso').innerText = `Pregunta ${index + 1} de ${banco.length}`;
+                
+                const caja = document.getElementById('opciones-caja');
+                caja.innerHTML = '';
+
+                data.a.forEach((opcion, i) => {
+                    const btn = document.createElement('button');
+                    btn.innerText = opcion;
+                    btn.className = 'btn-opcion';
+                    btn.onclick = () => {
+                        if(i === data.c) score++;
+                        document.getElementById('puntos').innerText = `Puntos: ${score}`;
+                        index++;
+                        cargarPregunta();
+                    };
+                    caja.appendChild(btn);
+                });
+            } else {
+                mostrarFinal();
+            }
+        }
+
+        function mostrarFinal() {
+            document.getElementById('juego').classList.add('oculto');
+            document.getElementById('final').classList.remove('oculto');
+            document.getElementById('puntuacion-final').innerText = `Acertaste ${score} de 20`;
+        }
+    </script>
 </body>
 </html>
