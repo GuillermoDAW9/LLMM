@@ -1,67 +1,59 @@
-const bancoPreguntas = [
-    { p: "¿Qué selección tiene más Mundiales?", r: ["Brasil", "Alemania", "Italia", "Argentina"], c: 0 },
-    { p: "¿Quién es el máximo goleador de la Champions?", r: ["Messi", "Cristiano Ronaldo", "Lewandowski", "Raúl"], c: 1 },
-    { p: "¿En qué país fue el primer Mundial (1930)?", r: ["Brasil", "Uruguay", "Francia", "Italia"], c: 1 },
-    { p: "¿Quién ganó el Balón de Oro 2023?", r: ["Haaland", "Messi", "Mbappé", "Rodri"], c: 1 },
-    { p: "¿Qué equipo tiene más Champions?", r: ["Milan", "Liverpool", "Real Madrid", "Bayern"], c: 2 },
-    { p: "¿Cómo apodan a la selección de Chile?", r: ["La Roja", "La Tri", "La Albiceleste", "La Sele"], c: 0 },
-    { p: "¿En qué club se retiró Zidane?", r: ["Juventus", "Bordeaux", "Real Madrid", "Cannes"], c: 2 },
-    { p: "¿Quién ganó la Eurocopa 2024?", r: ["Inglaterra", "Francia", "España", "Portugal"], c: 2 },
-    { p: "¿Quién es 'O Rei'?", r: ["Puskas", "Maradona", "Pelé", "Eusebio"], c: 2 },
-    { p: "¿En qué año ganó España el Mundial?", r: ["2006", "2010", "2014", "2002"], c: 1 },
-    { p: "¿Estadio del Liverpool?", r: ["Old Trafford", "Etihad", "Anfield", "Goodison Park"], c: 2 },
-    { p: "¿A qué selección llaman 'La Oranje'?", r: ["Bélgica", "Países Bajos", "Alemania", "Austria"], c: 1 },
-    { p: "¿Quién marcó el gol de la 10ª del Madrid?", r: ["Bale", "Ramos", "Cristiano", "Modric"], c: 1 },
-    { p: "¿Cuántos Balones de Oro tiene CR7?", r: ["3", "4", "5", "6"], c: 2 },
-    { p: "¿Quién entrenaba al Barça del sextete?", r: ["Luis Enrique", "Guardiola", "Vilanova", "Cruyff"], c: 1 },
-    { p: "¿Quién es la 'Araña Negra'?", r: ["Yashin", "Buffon", "Casillas", "Zoff"], c: 0 },
-    { p: "¿Club con más Premier League?", r: ["Arsenal", "Chelsea", "Man. United", "Man. City"], c: 2 },
-    { p: "¿En qué país nació Samuel Eto'o?", r: ["Camerún", "Costa de Marfil", "Ghana", "Nigeria"], c: 0 },
-    { p: "¿Quién ganó el Mundial 1986?", r: ["Alemania", "Argentina", "Brasil", "Francia"], c: 1 },
-    { p: "¿En qué país se jugará la final del Mundial 2026?", r: ["México", "Canadá", "EE.UU.", "Brasil"], c: 2 }
+const datos = [
+    { q: "¿Qué selección tiene más Mundiales?", a: ["Brasil", "Alemania", "Italia", "Argentina"], c: 0 },
+    { q: "¿Máximo goleador de la Champions?", a: ["Messi", "Cristiano Ronaldo", "Lewandowski", "Raúl"], c: 1 },
+    { q: "¿País del primer Mundial (1930)?", a: ["Brasil", "Uruguay", "Francia", "Italia"], c: 1 },
+    { q: "¿Quién ganó el Balón de Oro 2023?", a: ["Haaland", "Messi", "Mbappé", "Rodri"], c: 1 },
+    { q: "¿Qué equipo tiene más Champions?", a: ["Milan", "Liverpool", "Real Madrid", "Bayern"], c: 2 },
+    { q: "¿Apodo de la selección de Chile?", a: ["La Roja", "La Tri", "La Albiceleste", "La Sele"], c: 0 },
+    { q: "¿Dónde se retiró Zidane?", a: ["Juventus", "Bordeaux", "Real Madrid", "Cannes"], c: 2 },
+    { q: "¿Quién ganó la Eurocopa 2024?", a: ["Inglaterra", "Francia", "España", "Portugal"], c: 2 },
+    { q: "¿Quién es 'O Rei'?", a: ["Puskas", "Maradona", "Pelé", "Eusebio"], c: 2 },
+    { q: "¿En qué año ganó España el Mundial?", a: ["2006", "2010", "2014", "2002"], c: 1 },
+    { q: "¿Estadio del Liverpool?", a: ["Old Trafford", "Etihad", "Anfield", "Goodison Park"], c: 2 },
+    { q: "¿A qué selección llaman 'La Oranje'?", a: ["Bélgica", "Países Bajos", "Alemania", "Austria"], c: 1 },
+    { q: "¿Quién marcó en la final de la 10ª del Madrid?", a: ["Bale", "Ramos", "Cristiano", "Modric"], c: 1 },
+    { q: "¿Cuántos Balones de Oro tiene CR7?", a: ["3", "4", "5", "6"], c: 2 },
+    { q: "¿Quién entrenaba al Barça del sextete?", a: ["Luis Enrique", "Guardiola", "Vilanova", "Cruyff"], c: 1 },
+    { q: "¿Quién es la 'Araña Negra'?", a: ["Yashin", "Buffon", "Casillas", "Zoff"], c: 0 },
+    { q: "¿Club con más Premier League?", a: ["Arsenal", "Chelsea", "Man. United", "Man. City"], c: 2 },
+    { q: "¿País de Samuel Eto'o?", a: ["Camerún", "Costa de Marfil", "Ghana", "Nigeria"], c: 0 },
+    { q: "¿Quién ganó el Mundial 1986?", a: ["Alemania", "Argentina", "Brasil", "Francia"], c: 1 },
+    { q: "¿Sede final Mundial 2026?", a: ["México", "Canadá", "EE.UU.", "Brasil"], c: 2 }
 ];
 
-let indiceActual = 0;
-let puntos = 0;
+let iActual = 0;
+let score = 0;
 
-function comenzar() {
-    document.getElementById('inicio').classList.add('oculto');
-    document.getElementById('juego').classList.remove('oculto');
+function comenzarJuego() {
+    document.getElementById('pantalla-inicio').classList.add('oculto');
+    document.getElementById('pantalla-juego').classList.remove('oculto');
     mostrarPregunta();
 }
 
 function mostrarPregunta() {
-    if (indiceActual < bancoPreguntas.length) {
-        const item = bancoPreguntas[indiceActual];
-        document.getElementById('pregunta').innerText = item.p;
-        document.getElementById('numero-pregunta').innerText = `Pregunta: ${indiceActual + 1} / ${bancoPreguntas.length}`;
+    if (iActual < datos.length) {
+        const item = datos[iActual];
+        document.getElementById('texto-pregunta').innerText = item.q;
+        document.getElementById('num-pregunta').innerText = `Pregunta ${iActual + 1} de 20`;
         
-        const contenedorOpciones = document.getElementById('opciones');
-        contenedorOpciones.innerHTML = ''; // Limpiamos botones viejos
+        const caja = document.getElementById('contenedor-opciones');
+        caja.innerHTML = '';
 
-        item.r.forEach((opc, i) => {
-            const btn = document.createElement('button');
-            btn.innerText = opc;
-            btn.classList.add('btn-respuesta');
-            btn.onclick = () => verificar(i);
-            contenedorOpciones.appendChild(btn);
+        item.a.forEach((opc, index) => {
+            const b = document.createElement('button');
+            b.innerText = opc;
+            b.classList.add('btn-opcion');
+            b.onclick = () => {
+                if(index === item.c) score++;
+                document.getElementById('puntos').innerText = `Puntos: ${score}`;
+                iActual++;
+                mostrarPregunta();
+            };
+            caja.appendChild(b);
         });
     } else {
-        terminar();
+        document.getElementById('pantalla-juego').classList.add('oculto');
+        document.getElementById('pantalla-final').classList.remove('oculto');
+        document.getElementById('txt-final').innerText = `Has acertado ${score} de 20`;
     }
-}
-
-function verificar(seleccionado) {
-    if (seleccionado === bancoPreguntas[indiceActual].c) {
-        puntos++;
-        document.getElementById('marcador').innerText = `Puntos: ${puntos}`;
-    }
-    indiceActual++;
-    mostrarPregunta();
-}
-
-function terminar() {
-    document.getElementById('juego').classList.add('oculto');
-    document.getElementById('final').classList.remove('oculto');
-    document.getElementById('puntuacion-final').innerText = `Has acertado ${puntos} de ${bancoPreguntas.length}`;
 }
