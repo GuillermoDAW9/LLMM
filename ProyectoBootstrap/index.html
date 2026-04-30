@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Motor World - Guillermo</title>
+    <title>Motor World - Guillermo DAW</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .navbar { background-color: #1a1a1a; }
-        /* Ajuste para que las fotos se vean grandes y no se corten mal */
-        .carousel-item img { height: 70vh; object-fit: cover; filter: brightness(0.6); }
+        .navbar { background-color: #1a1a1a; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        /* Carrusel con tus 3 imágenes */
+        .carousel-item img { height: 70vh; object-fit: cover; filter: brightness(0.7); }
         .card-img-top { height: 250px; object-fit: cover; }
-        section { padding: 60px 0; }
-        .titulo-subrayado { border-bottom: 3px solid #007bff; display: inline-block; padding-bottom: 10px; }
+        section { padding: 80px 0; }
+        .titulo-seccion { font-weight: bold; margin-bottom: 40px; text-transform: uppercase; border-bottom: 3px solid #0d6efd; display: inline-block; padding-bottom: 10px; }
+        footer { background-color: #111; color: #777; }
     </style>
 </head>
 <body>
@@ -19,9 +20,12 @@
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#">🏎️ MOTOR WORLD</a>
-            <div class="collapse navbar-collapse">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#marcas">Marcas</a></li>
                     <li class="nav-item"><a class="nav-link" href="#media">Media</a></li>
                 </ul>
@@ -32,48 +36,57 @@
     <div id="inicio" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="1.jpg" class="d-block w-100" alt="Coche 1">
+                <img src="1.jpg" class="d-block w-100" alt="Imagen 1">
                 <div class="carousel-caption">
-                    <h2>Deportividad Extrema</h2>
-                    <p>Siente la potencia en cada curva.</p>
+                    <h2 class="display-4 fw-bold">Rendimiento Extremo</h2>
+                    <p>BMW M4: La ingeniería al límite.</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="2.jpg" class="d-block w-100" alt="Coche 2">
+                <img src="2.jpg" class="d-block w-100" alt="Imagen 2">
                 <div class="carousel-caption">
-                    <h2>Lujo y Confort</h2>
-                    <p>Diseño alemán de alta gama.</p>
+                    <h2 class="display-4 fw-bold">Lujo y Poder</h2>
+                    <p>Mercedes AMG: Elegancia en movimiento.</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="3.jpg" class="d-block w-100" alt="Coche 3">
+                <img src="3.jpg" class="d-block w-100" alt="Imagen 3">
                 <div class="carousel-caption">
-                    <h2>Ingeniería Avanzada</h2>
-                    <p>El futuro de la conducción.</p>
+                    <h2 class="display-4 fw-bold">Innovación Quattro</h2>
+                    <p>Audi RS: Tecnología de vanguardia.</p>
                 </div>
             </div>
         </div>
     </div>
 
     <section id="marcas" class="container text-center">
-        <h2 class="mb-5 titulo-subrayado">NUESTRAS MARCAS</h2>
-        <div class="row">
+        <h2 class="titulo-seccion">Nuestras Marcas</h2>
+        <div class="row mt-4 justify-content-center">
             <div class="col-md-4 mb-4">
-                <div class="card shadow">
-                    <img src="1.jpg" class="card-img-top" alt="BMW">
-                    <div class="card-body"><h5>BMW</h5></div>
+                <div class="card shadow border-0">
+                    <img src="1.jpg" class="card-img-top" alt="Marca 1">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">BMW</h5>
+                        <button class="btn btn-primary btn-sm">Explorar</button>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card shadow">
-                    <img src="2.jpg" class="card-img-top" alt="Mercedes">
-                    <div class="card-body"><h5>Mercedes</h5></div>
+                <div class="card shadow border-0">
+                    <img src="2.jpg" class="card-img-top" alt="Marca 2">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Mercedes-Benz</h5>
+                        <button class="btn btn-dark btn-sm">Explorar</button>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card shadow">
-                    <img src="3.jpg" class="card-img-top" alt="Audi">
-                    <div class="card-body"><h5>Audi</h5></div>
+                <div class="card shadow border-0">
+                    <img src="3.jpg" class="card-img-top" alt="Marca 3">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Audi</h5>
+                        <button class="btn btn-danger btn-sm">Explorar</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -81,23 +94,39 @@
 
     <section id="media" class="bg-light">
         <div class="container text-center">
-            <h2 class="mb-5 titulo-subrayado">MULTIMEDIA</h2>
-            <div class="row align-items-center">
-                <div class="col-md-7 mb-4">
-                    <video controls class="w-100 rounded shadow">
-                        <source src="video.mp4" type="video/mp4">
-                    </video>
+            <h2 class="titulo-seccion">Espacio Multimedia</h2>
+            <div class="row align-items-center mt-5">
+                <div class="col-lg-7 mb-4">
+                    <div class="ratio ratio-16x9 shadow rounded bg-dark overflow-hidden">
+                        <video controls>
+                            <source src="game.mp4" type="video/mp4">
+                            Tu navegador no soporta el vídeo.
+                        </video>
+                    </div>
+                    <p class="mt-3 fw-bold text-secondary">🎥 Gameplay / Test Drive</p>
                 </div>
-                <div class="col-md-5">
-                    <h4>Sonido del Motor</h4>
-                    <audio controls class="w-100 mt-3">
-                        <source src="audio.mp3" type="audio/mpeg">
-                    </audio>
+                <div class="col-lg-5 mb-4">
+                    <div class="p-5 bg-white shadow rounded">
+                        <h4 class="mb-4">Banda Sonora</h4>
+                        <audio controls class="w-100">
+                            <source src="music.mp3" type="audio/mpeg">
+                            Tu navegador no soporta el audio.
+                        </audio>
+                        <p class="mt-3 text-muted">Sintoniza la música del proyecto</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <footer class="py-4 text-center">
+        <div class="container">
+            <p class="mb-0">Motor World Project &copy; 2026 | Guillermo DAW</p>
+        </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
 </body>
 </html>
