@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lector RSS con AJAX - Ejercicio DAW</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: 20px auto; padding: 20px; background-color: #f4f4f4; }
+        h1 { color: #333; text-align: center; }
+        #contenedor-rss { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .noticia { border-bottom: 1px solid #eee; padding: 15px 0; }
+        .noticia:last-child { border-bottom: none; }
+        .noticia h3 { margin: 0 0 10px 0; color: #0056b3; }
+        .noticia p { color: #666; font-size: 0.9em; }
+        .noticia a { text-decoration: none; color: #d9534f; font-weight: bold; }
+        .noticia a:hover { text-decoration: underline; }
+        .fecha { font-style: italic; color: #999; font-size: 0.8em; }
+        .error { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h1>📰 Últimas Noticias (RSS via AJAX)</h1>
+    
+    <div id="contenedor-rss">
+        <p>Cargando noticias...</p>
+    </div>
+
+    <script>
+        // URL de un RSS real. 
+        // Nota: Algunos servidores bloquean peticiones directas desde el navegador (CORS).
+        // Usamos un proxy de prueba o un feed que lo permita.
+        const RSS_URL = "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/portada";
+
+        function cargarRSS() {
+            const xhr = new XMLHttpRequest();
+
+            xhr.onreadystatechange = function() {
+                if (this.readyState == 4) {
+                    if (this.status == 200) {
+                        procesarXML(this.responseXML);
+                    } else {
+                        document.getElementById("contenedor-rss").innerHTML = 
+                            "<p class='error'>Error al cargar el RSS. (Probablemente por bloqueo CORS del navegador).</p>";
+                    }
+                }
+            };
+
+            xhr.open("GET", RSS_URL, true);
+            xhr.send();
+        }
+
+        function procesarXML(xml) {
+            const items = xml.querySelectorAll("item");
+            let html = "";
+
+            // Solo mostramos las primeras 5 noticias
+            for (let i = 0; i < 5; i++) {
+                const titulo = items[i].querySelector("title").textContent;
+                const enlace = items[i].querySelector("link").textContent;
+                const descripcion = items[i].querySelector("description").textContent;
+                const fecha = items[i].querySelector("pubDate").textContent;
+
+                html += `
+                    <div class="noticia">
+                        <h3>${titulo}</h3>
+                        <p class="fecha">${new Date(fecha).toLocaleDateString()}</p>
+                        <p>${descripcion.substring(0, 150)}...</p>
+                        <a href="${enlace}" target="_blank">Leer más →</a>
+                    </div>
+                `;
+            }
+
+            document.getElementById("contenedor-rss").innerHTML = html;
+        }
+
+        // Ejecutar al cargar la página
+        window.onload = cargarRSS;
+    </script>
+</body>
+</html>
