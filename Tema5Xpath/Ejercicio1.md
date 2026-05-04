@@ -1,0 +1,28 @@
+# Ejercicios de Consultas XPath - IES Abastos
+
+Este documento contiene la resolución de las consultas XPath solicitadas sobre el catálogo de ciclos formativos del IES Abastos.
+
+## 📄 Archivo XML de Origen
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<ies>
+  <nombre>IES Abastos</nombre>
+  <web>[http://www.iesabastos.org](http://www.iesabastos.org)</web>
+  <ciclos>
+    <ciclo id="ASIR">
+      <nombre>Administración de Sistemas Informáticos en Red</nombre>
+      <grado>Superior</grado>
+      <decretoTitulo año="2009" />
+    </ciclo>
+    <ciclo id="DAW">
+      <nombre>Desarrollo de Aplicaciones Web</nombre>
+      <grado>Superior</grado>
+      <decretoTitulo año="2010" />
+    </ciclo>
+    <ciclo id="SMR">
+      <nombre>Sistemas Microinformáticos y Redes</nombre>
+      <grado>Medio</grado>
+      <decretoTitulo año="2008" />
+    </ciclo>
+  </ciclos>
+</ies>
