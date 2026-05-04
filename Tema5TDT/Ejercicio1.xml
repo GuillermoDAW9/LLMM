@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ciclo [
+    <!ELEMENT ciclo (nombre_ciclo, modulos)>
+    <!ELEMENT nombre_ciclo (#PCDATA)>
+    <!ELEMENT modulos (modulo+)>
+    <!ELEMENT modulo (nombre, descripcion, codigo, profesor, fechas)>
+    <!ELEMENT nombre (#PCDATA)>
+    <!ELEMENT descripcion (#PCDATA)>
+    <!ELEMENT codigo (#PCDATA)>
+    <!ELEMENT profesor (#PCDATA)>
+    <!ELEMENT fechas (inicio, fin)>
+    <!ELEMENT inicio (dia, mes, ano)>
+    <!ELEMENT fin (dia, mes, ano)>
+    <!ELEMENT dia (#PCDATA)>
+    <!ELEMENT mes (#PCDATA)>
+    <!ELEMENT ano (#PCDATA)>
+]>
+<ciclo>
+    <nombre_ciclo>Desarrollo de Aplicaciones Web (DAW)</nombre_ciclo>
+    <modulos>
+        <modulo>
+            <nombre>Programación</nombre>
+            <descripcion>Desarrollo de algoritmos y estructuras de datos utilizando lenguajes de programación modernos.</descripcion>
+            <codigo>MP0485</codigo>
+            <profesor>Toñi</profesor>
+            <fechas>
+                <inicio><dia>15</dia><mes>09</mes><ano>2025</ano></inicio>
+                <fin><dia>22</dia><mes>06</mes><ano>2026</ano></fin>
+            </fechas>
+        </modulo>
+        <modulo>
+            <nombre>Lenguajes de marcas y sistemas de gestión de información</nombre>
+            <descripcion>Creación y gestión de documentos estructurados mediante etiquetas y lenguajes de marcado.</descripcion>
+            <codigo>MP0484</codigo>
+            <profesor>Ignacio</profesor>
+            <fechas>
+                <inicio><dia>15</dia><mes>09</mes><ano>2025</ano></inicio>
+                <fin><dia>22</dia><mes>06</mes><ano>2026</ano></fin>
+            </fechas>
+        </modulo>
+        <modulo>
+            <nombre>Bases de datos</nombre>
+            <descripcion>Diseño, implementación y manipulación de sistemas de almacenamiento de datos relacionales.</descripcion>
+            <codigo>MP0483</codigo>
+            <profesor>Eduardo</profesor>
+            <fechas>
+                <inicio><dia>15</dia><mes>09</mes><ano>2025</ano></inicio>
+                <fin><dia>22</dia><mes>06</mes><ano>2026</ano></fin>
+            </fechas>
+        </modulo>
+        <modulo>
+            <nombre>Entornos de desarrollo</nombre>
+            <descripcion>Uso de herramientas CASE, control de versiones y metodologías de desarrollo software.</descripcion>
+            <codigo>MP0487</codigo>
+            <profesor>Juanma</profesor>
+            <fechas>
+                <inicio><dia>15</dia><mes>09</mes><ano>2025</ano></inicio>
+                <fin><dia>22</dia><mes>06</mes><ano>2026</ano></fin>
+            </fechas>
+        </modulo>
+        <modulo>
+            <nombre>Digitalización</nombre>
+            <descripcion>Implementación de procesos digitales y transformación tecnológica en la empresa.</descripcion>
+            <codigo>MP5010</codigo>
+            <profesor>Juanma</profesor>
+            <fechas>
+                <inicio><dia>15</dia><mes>09</mes><ano>2025</ano></inicio>
+                <fin><dia>22</dia><mes>06</mes><ano>2026</ano></fin>
+            </fechas>
+        </modulo>
+        <modulo>
+            <nombre>Sostenibilidad</nombre>
+            <descripcion>Aplicación de criterios de sostenibilidad y economía circular en el sector IT.</descripcion>
+            <codigo>MP5011</codigo>
+            <profesor>Rosa</profesor>
+            <fechas>
+                <inicio><dia>15</dia><mes>09</mes><ano>2025</ano></inicio>
+                <fin><dia>22</dia><mes>06</mes><ano>2026</ano></fin>
+            </fechas>
+        </modulo>
+    </modulos>
+</ciclo>
