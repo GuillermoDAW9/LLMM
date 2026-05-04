@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE alumnos SYSTEM "alumnos.dtd">
+<alumnos>
+    <alumno num_alumno="a001" sexo="hombre" altura_cm="180">
+        <nombre>Juan</nombre>
+        < apellidos>Pérez García</apellidos>
+        <domicilio>Calle Falsa 123, Madrid</domicilio>
+        <telefono titular="propio">600111222</telefono>
+        <telefono titular="madre">600333444</telefono>
+        <equipo>Baloncesto</equipo>
+        <aficion>Lectura</aficion>
+        <aficion>Ajedrez</aficion>
+        <origen>
+            <provincia>Madrid</provincia>
+        </origen>
+        <comentarios>Alumno muy <b>participativo</b> en clase.</comentarios>
+        <evaluacion>Primera</evaluacion>
+        <calificacion>8</calificacion>
+        <evaluacion>Segunda</evaluacion>
+        <calificacion>9</calificacion>
+    </alumno>
+
+    <alumno num_alumno="a002" ayudante="a001" sexo="mujer">
+        <nombre>Maria</nombre>
+        <apellidos>López Sanz</apellidos>
+        <domicilio>Av. Libertad 45, Barcelona</domicilio>
+        <telefono titular="padre">655777888</telefono>
+        <origen>
+            <pais>Francia</pais>
+        </origen>
+        <evaluacion>Primera</evaluacion>
+        <calificacion>7</calificacion>
+    </alumno>
+</alumnos>
