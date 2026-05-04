@@ -210,3 +210,14 @@
 | [Ejercicio 1](Tema5Xpath/Ejercicio1.md) | Expresiones simples. https://guillermodaw9.github.io/LLMM/Tema5Xpath/Ejercicio1.md/| 
 | [Ejercicio 2](Tema5Xpath/Ejercicio2.md) | Expresiones simples. https://guillermodaw9.github.io/LLMM/Tema5Xpath/Ejercicio2.md/ |
 | [Ejercicio 3](Tema5Xpath/Ejercicio3.md) | Expresiones anidadas. https://guillermodaw9.github.io/LLMM/Tema5Xpath/Ejercicio3.md/ |
+
+
+## Tema 5XSLT - LMSGI_05_Actividades
+
+| Ejercicios |  Descripción | 
+| --- | --- |
+| [Ejercicio 1](Tema5XSLT/Ejercicio1.xsl) | Nombre Carreras. https://guillermodaw9.github.io/LLMM/Tema5XSLT/Ejercicio1.xsl/| 
+| [Ejercicio 2](Tema5XSLT/Ejercicio2.xsl) | Nombre Asignaturas. https://guillermodaw9.github.io/LLMM/Tema5XSLT/Ejercicio2.xsl/ |
+| [Ejercicio 3](Tema5XSLT/Ejercicio3.xsl) | Apellidos y nombres alumnos. https://guillermodaw9.github.io/LLMM/Tema5XSLT/Ejercicio3.xsl/ |
+| [Ejercicio 4](Tema5XSLT/Ejercicio4.xsl) | Nombre, plan y nombre de carreras. https://guillermodaw9.github.io/LLMM/Tema5XSLT/Ejercicio4.xsl/ |
+| [Ejercicio 5](Tema5XSLT/Ejercicio5.xsl) | Nombre,número de creditos y prácticos de la asignatura. https://guillermodaw9.github.io/LLMM/Tema5XSLT/Ejercicio5.xsl/ |
