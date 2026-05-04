@@ -181,3 +181,12 @@
 ## ProyectoFinal - LMSGI_05_Actividades
 
 | [https://guillermodaw9.github.io/LLMM/ProyectoFinal/] | Enlace al proyecto |
+
+
+## Tema 5TDT - LMSGI_05_Actividades
+
+| Ejercicios | descripción |
+| --- | --- |
+| [Ejercicio 1](Tema5TDT/Ejercicio1.xml) | Asignaturas. | https://guillermodaw9.github.com/LLMM/Tema5TDT/Ejercicio1.xml/ |
+| [Ejercicio 2](Tema4/Ejercicio2.html) | Usar archivo y editor. |
+| [Ejercicio 3](Tema4/Ejercicio3.html) | NASA. |
