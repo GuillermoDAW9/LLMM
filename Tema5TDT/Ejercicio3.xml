@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pedidos SYSTEM "pedidos.dtd">
+<pedidos>
+    <!-- Pedido realizado por una Empresa -->
+    <pedido>
+        <empresa CIF="B12345678" sector="Tecnologia" actividad="Venta_Software Consultoria_IT">Tech Solutions S.L.</empresa>
+        <productos>
+            <producto id_prod="p001">Servidor Dell R740</producto>
+            <producto id_prod="p002">Licencia Windows Server</producto>
+        </productos>
+        <fecha>2024-05-20</fecha>
+        <factura numfactura="f202401" cliente="B12345678" productos="p001 p002">
+            <emisor>&MiEmpresa;</emisor>
+            <total>4500.00</total>
+            <fecha_factura>2024-05-21</fecha_factura>
+        </factura>
+    </pedido>
+
+    <!-- Pedido realizado por un Cliente (persona) -->
+    <pedido>
+        <cliente NIF="12345678X">Juan García Pérez</cliente>
+        <productos>
+            <producto id_prod="p003">Teclado Mecánico RGB</producto>
+        </productos>
+        <fecha>2024-05-22</fecha>
+        <factura numfactura="f202402" cliente="12345678X" productos="p003">
+            <emisor>&MiEmpresa;</emisor>
+            <total>120.00</total>
+            <fecha_factura>2024-05-23</fecha_factura>
+        </factura>
+    </pedido>
+</pedidos>
