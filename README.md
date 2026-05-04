@@ -188,5 +188,5 @@
 | Ejercicios |  Descripción | 
 | --- | --- |
 | [Ejercicio 1](Tema5TDT/Ejercicio1.xml) | Asignaturas. https://guillermodaw9.github.io/LLMM/Tema5TDT/Ejercicio1.xml/| 
-| [Ejercicio 2](Tema4/Ejercicio2.html) | Usar archivo y editor. |
-| [Ejercicio 3](Tema4/Ejercicio3.html) | NASA. |
+| [Ejercicio 2](Tema5TDT/Ejercicio2.xml) | Alumnos. https://guillermodaw9.github.io/LLMM/Tema5TDT/Ejercicio2.xml/ |
+| [Ejercicio 3](Tema5TDT/Ejercicio3.xml) | Pedidos. https://guillermodaw9.github.io/LLMM/Tema5TDT/Ejercicio3.xml/|
