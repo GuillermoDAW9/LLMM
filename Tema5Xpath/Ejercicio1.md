@@ -2,7 +2,7 @@
 
 Este documento contiene la resolución de las consultas XPath solicitadas sobre el catálogo de ciclos formativos del IES Abastos.
 
-## 📄 Archivo XML de Origen
+## Archivo XML de Origen
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <ies>
