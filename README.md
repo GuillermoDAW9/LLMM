@@ -201,3 +201,12 @@
 | [Ejercicio 2](Tema5XSD/Ejercicio2.xsd) | Generar. https://guillermodaw9.github.io/LLMM/Tema5XSD/Ejercicio2.xsd/ |
 | [Ejercicio 3](Tema5XSD/Ejercicio3.xml) | Tabla periódica. https://guillermodaw9.github.io/LLMM/Tema5XSD/Ejercicio3.xml/ |
 | [Ejercicio 3](Tema5XSD/Ejercicio3.xsd) | Tabla periódica. https://guillermodaw9.github.io/LLMM/Tema5XSD/Ejercicio3.xsd/|
+
+
+## Tema 5Xpath - LMSGI_05_Actividades
+
+| Ejercicios |  Descripción | 
+| --- | --- |
+| [Ejercicio 1](Tema5Xpath/Ejercicio1.md) | Expresiones simples. https://guillermodaw9.github.io/LLMM/Tema5Xpath/Ejercicio1.md/| 
+| [Ejercicio 2](Tema5Xpath/Ejercicio2.md) | Expresiones simples. https://guillermodaw9.github.io/LLMM/Tema5Xpath/Ejercicio2.md/ |
+| [Ejercicio 3](Tema5Xpath/Ejercicio3.md) | Expresiones anidadas. https://guillermodaw9.github.io/LLMM/Tema5Xpath/Ejercicio3.md/ |
