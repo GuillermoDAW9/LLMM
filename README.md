@@ -190,3 +190,14 @@
 | [Ejercicio 1](Tema5TDT/Ejercicio1.xml) | Asignaturas. https://guillermodaw9.github.io/LLMM/Tema5TDT/Ejercicio1.xml/| 
 | [Ejercicio 2](Tema5TDT/Ejercicio2.xml) | Alumnos. https://guillermodaw9.github.io/LLMM/Tema5TDT/Ejercicio2.xml/ |
 | [Ejercicio 3](Tema5TDT/Ejercicio3.xml) | Pedidos. https://guillermodaw9.github.io/LLMM/Tema5TDT/Ejercicio3.xml/|
+
+
+## Tema 5XSD - LMSGI_05_Actividades
+
+| Ejercicios |  Descripción | 
+| --- | --- |
+| [Ejercicio 1](Tema5XSD/Ejercicio1.xsd) | Esquema. https://guillermodaw9.github.io/LLMM/Tema5XSD/Ejercicio1.xsd/| 
+| [Ejercicio 2](Tema5XSD/Ejercicio2.xml) | Generar Esquema. https://guillermodaw9.github.io/LLMM/Tema5XSD/Ejercicio2.xml/ |
+| [Ejercicio 2](Tema5XSD/Ejercicio2.xsd) | Generar. https://guillermodaw9.github.io/LLMM/Tema5XSD/Ejercicio2.xsd/ |
+| [Ejercicio 3](Tema5XSD/Ejercicio3.xml) | Tabla periódica. https://guillermodaw9.github.io/LLMM/Tema5XSD/Ejercicio3.xml/ |
+| [Ejercicio 3](Tema5XSD/Ejercicio3.xsd) | Tabla periódica. https://guillermodaw9.github.io/LLMM/Tema5XSD/Ejercicio3.xsd/|
